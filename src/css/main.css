@@ -1,0 +1,19 @@
+/* Settings */
+@import url("./settings/default.scss");
+@import url("./settings/variables.scss");
+@import url("./settings/fonts.scss");
+@import url("./settings/general.scss");
+
+/* Header */
+@import url("./sections/header/header.scss");
+
+/* Home */
+@import url("./sections/home/main.scss");
+@import url("./sections/home/tabs.scss");
+@import url("./sections/home/projects.scss");
+@import url("./sections/elements/project.scss");
+@import url("./sections/home/partners.scss");
+@import url("./sections/home/together.scss");
+
+/* Footer */
+@import url("./sections/footer/footer.scss");

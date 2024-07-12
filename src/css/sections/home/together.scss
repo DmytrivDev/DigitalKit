@@ -1,0 +1,41 @@
+.section__together {
+    background-color: var(--co);
+}
+
+.together__cont {
+    padding: 7.5rem 0;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+}
+
+.together__img {
+    height: 11.25rem;
+
+    img {
+        display: block;
+        height: 100%;
+        height: auto;
+    }
+}
+
+.tohether__title {
+    font-size: 6rem;
+    line-height: 6.5rem;
+    margin-top: 2.5rem;
+    text-align: center;
+    font-weight: 500;
+    color: var(--cw);
+}
+
+.together__buttons {
+    margin-top: 2rem;
+    gap: 1.5rem;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+
+    .button {
+        min-width: 13rem;
+    }
+}

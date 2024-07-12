@@ -1,0 +1,97 @@
+.header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    z-index: 20;
+    background-color: var(--cw);
+}
+
+.header__content {
+    height: 5.5rem;
+}
+
+.header_part {
+    min-width: 12.75rem;
+    gap: 1rem;
+}
+
+.custom-logo-link {
+    max-width: 9rem;
+    width: 100%;
+    display: block;
+
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+.header__nav {
+    padding: .25rem;
+    border-radius: 16rem;
+    background-color: var(--cgl);
+
+    ul {
+        display: flex;
+
+        li {
+            a {
+                height: 3rem;
+                min-width: 6rem;
+                padding: 0 1rem;
+                font-size: 0.875rem;
+                line-height: 1.5rem;
+                border-radius: 16rem;
+                font-weight: 600;
+                display: inline-flex;
+                align-items: center;
+                align-content: center;
+                justify-content: center;
+                color: var(--ct);
+                transition: .3s;
+            }
+
+            &.current-menu-item {
+                a {
+                    background-color: var(--cw);
+                    color: var(--co);
+                }
+            }
+        }
+    }
+}
+
+.header__lang {
+    ul {
+        gap: .25rem;
+        display: flex;
+        align-items: center;
+        align-content: center;
+
+        li {
+            a {
+                height: 3rem;
+                min-width: 4.5rem;
+                padding: 0 1rem;
+                border-radius: 3rem;
+                border: 1px solid var(--cgl);
+                font-weight: 600;
+                display: inline-flex;
+                align-items: center;
+                align-content: center;
+                justify-content: center;
+                color: var(--ct);
+                transition: .3s;  
+
+                &.current-menu-item {
+                    a {
+                        background-color: var(--cw);
+                        color: var(--co);
+                    }
+                }
+            }
+        }
+    }
+}

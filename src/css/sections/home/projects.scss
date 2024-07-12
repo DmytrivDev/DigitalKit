@@ -1,0 +1,16 @@
+.button__arrow {
+    width: 2.5rem;
+    height: 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.projects__list {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    gap: 1rem;
+    row-gap: 2.5rem;
+    border-top: 1px solid var(--cgd);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
