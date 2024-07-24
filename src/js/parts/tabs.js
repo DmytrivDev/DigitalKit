@@ -48,7 +48,10 @@ export const tabs = () => {
 
 function setTransform(value) {
   const newVal = value + 90;
-  const newValTr = (10 - value) * 1.25;
+  const newValTr = (10 - value) * 0.5;
+  const newValSh = value * 20;
   const tabsContainer = document.querySelector('.tabs__continner');
-  tabsContainer.style.transform = `scale(${newVal}%) translateY(${-newValTr}%)`;
+  const tabsShadow = document.querySelector('.tavs__shadow');
+  tabsContainer.style.transform = `scale(${newVal}%)`;
+  tabsShadow.style.top = `-${newValSh}px`;
 }
