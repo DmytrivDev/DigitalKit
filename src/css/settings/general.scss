@@ -1,24 +1,25 @@
 body {
     font-size: 16px;
     line-height: 1.5;
-    background-color: var(--cw);
+    background-color: var(--cw2);
     color: var(--ct);
     font-family: sans-serif;
 }
 
 .container {
-    max-width: 90rem;
+    max-width: 90rem; 
     padding: 0 3.5rem;
 }
 
 .button {
-    padding: .75rem 1.5rem;
+    padding: 0.75rem 1.5rem;
     font-weight: 600;
     border-radius: 4rem;
     display: inline-flex;
     align-items: center;
     align-content: center;
     justify-content: center;
+    background-color: transparent;
 
     &.primary {
         background-color: var(--co);
@@ -34,11 +35,25 @@ body {
         border: 1px solid var(--cw);
         color: var(--cw);
     }
+
+    &.fourth {
+        border: 1px solid var(--ct);
+        color: var(--ct);
+    }
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     margin: 0;
     font-weight: 500;
+
+    &.center {
+        text-align: center;
+    }
 }
 
 h1 {
@@ -75,4 +90,20 @@ h2 {
 
 .section__simple {
     margin-top: 12.5rem;
+}
+
+.page__heading {
+    margin-top: 12rem;
+    gap: 1rem;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+
+    p {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        max-width: 55rem;
+    }
 }

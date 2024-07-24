@@ -1,0 +1,86 @@
+.case__item {
+    gap: 1rem;
+    display: flex;
+
+    &:nth-child(even) {
+        flex-direction: row-reverse;
+    }
+}
+
+.case__info {
+    min-height: 42.5rem;
+    width: 27rem;
+    min-width: 27rem;
+    padding: 2.5rem 2rem;
+    border-radius: 1rem;
+    background-color: var(--cw);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.case__domain {
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    font-weight: 600;
+    color: var(--co);
+}
+
+.case__bottom {
+    a {
+        font-size: 2rem;
+        line-height: 2.5rem;
+        font-weight: 500;
+        color: var(--ct);
+    }
+}
+
+.case__desc {
+    margin-top: 1.5rem;
+    color: var(--cg);
+}
+
+.case__main {
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .project__tags {
+        max-width: 33rem;
+        position: relative;
+        z-index: 2;
+        top: inherit;
+        left: inherit;
+        bottom: inherit;
+        right: inherit;
+    }
+}
+
+.case__top {
+    position: relative;
+    z-index: 2;
+
+    .project__tags {
+        li {
+            a, span {
+                background-color: var(--cw);
+            }
+        }
+    }
+}
+
+.case__arrow {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-size: 1rem;
+    background-repeat: no-repeat;
+    background-position: center center;
+    border-radius: 50%;
+    background-color: var(--cw);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4 4H12M12 4V12M12 4L4 12' stroke='%23191919' stroke-width='2' stroke-linejoin='bevel'/%3E%3C/svg%3E");
+}

@@ -1,0 +1,12 @@
+.case__image {
+    height: 42rem;
+    border-radius: 1rem;
+    margin-top: 4rem;
+    position: relative;
+    overflow: hidden;
+
+    img {
+        height: calc(100% - 6rem);
+        width: auto;
+    }
+}

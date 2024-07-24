@@ -17,3 +17,15 @@
 
 /* Footer */
 @import url("./sections/footer/footer.scss");
+
+/* Cases */
+@import url("./sections/cases/cases.scss");
+@import url("./sections/elements/case.scss");
+@import url("./sections/cases/allcases.scss");
+
+/* case */
+@import url("./sections/case/case.scss");
+@import url("./sections/case/services.scss");
+@import url("./sections/case/gallery.scss");
+@import url("./sections/case/review.scss");
+@import url("./sections/case/related.scss");
