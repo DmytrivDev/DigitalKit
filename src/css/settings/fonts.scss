@@ -1,0 +1,36 @@
+/* Підключення шрифтів з різною жирністю */
+@font-face {
+    font-family: "MazzardH";
+    src: url("../fonts/MazzardH-Regular.eot");
+    src:
+        url("../fonts/MazzardH-Regular.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/MazzardH-Regular.woff") format("woff"),
+        url("../fonts/MazzardH-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-style: normal;
+    font-display: auto;
+}
+
+@font-face {
+    font-family: "MazzardH";
+    src: url("../fonts/MazzardH-Medium.eot");
+    src:
+        url("../fonts/MazzardH-Medium.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/MazzardH-Medium.woff") format("woff"),
+        url("../fonts/MazzardH-Medium.ttf") format("truetype");
+    font-weight: 500;
+    font-style: normal;
+    font-display: auto;
+}
+
+@font-face {
+    font-family: "MazzardH";
+    src: url("../fonts/MazzardH-SemiBold.eot");
+    src:
+        url("../fonts/MazzardH-SemiBold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/MazzardH-SemiBold.woff") format("woff"),
+        url("../fonts/MazzardH-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+    font-display: auto;
+}
