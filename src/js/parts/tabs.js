@@ -39,7 +39,7 @@ export const tabs = () => {
         }
 
 
-        const transformValue = (percent / 100) * 30;
+        const transformValue = (percent / 100) * 10;
         setTransform(transformValue);
       }
     });
@@ -47,8 +47,8 @@ export const tabs = () => {
 };
 
 function setTransform(value) {
-  const newVal = 30 - value;
-  console.log(newVal)
+  const newVal = value + 90;
+  const newValTr = (10 - value) * 1.25;
   const tabsContainer = document.querySelector('.tabs__continner');
-  tabsContainer.style.transform = `rotateX(-${newVal}deg)`;
+  tabsContainer.style.transform = `scale(${newVal}%) translateY(${-newValTr}%)`;
 }
