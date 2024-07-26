@@ -7,7 +7,7 @@ body {
 }
 
 .container {
-    max-width: 90rem; 
+    max-width: 90rem;
     padding: 0 3.5rem;
 }
 
@@ -67,12 +67,28 @@ h2 {
 }
 
 .section__title {
-    padding-top: 1.5rem;
-    border-top: 1px solid var(--cgd);
+    padding: 1.5rem 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     align-content: center;
+    position: relative;
+
+    .hr {
+        background-color: var(--cgd);
+        position: absolute;
+        left: 0;
+        width: 0;
+        height: 1px;
+
+        &.hrt {
+            top: 0;
+        }
+
+        &.hrb {
+            bottom: 0;
+        }
+    }
 
     h2 {
         max-width: calc(100% - 4rem);
@@ -105,5 +121,78 @@ h2 {
         font-size: 1.5rem;
         line-height: 2rem;
         max-width: 55rem;
+    }
+}
+
+.coursorField {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 6;
+
+    &:hover {
+        & + .coursor {
+            opacity: 1;
+            visibility: visible;
+
+            img {
+                animation: blink 0.6s;
+            }
+        }
+    }
+    & + .coursor {
+        width: 9.5rem;
+        height: 4rem;
+        position: absolute;
+        z-index: 5;
+        transform-origin: center center;
+        transform: rotate(-2deg) translate(-50%, -50%);
+        opacity: 0;
+        visibility: hidden;
+
+        img {
+            width: 100%;
+            height: 100%;
+            transform-origin: center center;
+            transform: rotateX(0deg);
+        }
+    }
+}
+
+@keyframes blink {
+    50% {
+        transform: rotateX(85deg); /* Початкова та кінцева позиція - не повернуте око */
+    }
+    100% {
+        transform: rotateX(0deg); /* Поворот ока на 90 градусів для симуляції кліпання */
+    }
+}
+
+@media screen and (max-width: 1440px) {
+    html,
+    body {
+        font-size: 1.11vw;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    html,
+    body {
+        font-size: 16px;
+        &.overHideMob {
+            overflow: hidden;
+        }
+    }
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    html,
+    body {
+        font-size: 4.27vw;
     }
 }

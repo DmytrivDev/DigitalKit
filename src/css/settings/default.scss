@@ -84,6 +84,10 @@ select {
   position: relative;
 }
 
+button {
+  background-color: transparent;
+}
+
 .flex {
   display: flex;
   flex-wrap: wrap;

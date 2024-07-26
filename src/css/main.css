@@ -6,6 +6,7 @@
 
 /* Header */
 @import url("./sections/header/header.scss");
+@import url("./sections/header/navigation.scss");
 
 /* Home */
 @import url("./sections/home/main.scss");

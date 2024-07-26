@@ -26,8 +26,7 @@ export const tabs = () => {
       if (containerRect.top >= viewportHeight) {
         setTransform(0);
       } else if (
-        containerRect.top <= viewportHeight &&
-        containerRect.bottom >= viewportHeight
+        containerRect.top <= viewportHeight
       ) {
         const scrolledPixels = viewportHeight - containerRect.top;
         let percent = (scrolledPixels / pixelMark) * 100;
