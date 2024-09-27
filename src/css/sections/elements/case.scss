@@ -1,6 +1,7 @@
 .case__item {
     gap: 1rem;
     display: flex;
+    position: relative;
 
     &:nth-child(even) {
         flex-direction: row-reverse;
