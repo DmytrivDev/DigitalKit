@@ -8,3 +8,13 @@
     display: flex;
     flex-direction: column;
 }
+
+@media screen and (max-width: 960px) {
+    .section__cases {
+        padding-top: 9.75rem;
+    }
+    .cases__list {
+        margin-top: 4rem;
+        gap: 2rem;
+    }
+}

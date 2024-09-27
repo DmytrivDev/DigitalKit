@@ -24,9 +24,16 @@
 @import url("./sections/elements/case.scss");
 @import url("./sections/cases/allcases.scss");
 
-/* case */
+/* Case */
 @import url("./sections/case/case.scss");
 @import url("./sections/case/services.scss");
 @import url("./sections/case/gallery.scss");
 @import url("./sections/case/review.scss");
 @import url("./sections/case/related.scss");
+
+/* About */
+@import url("./sections/about/about.scss");
+@import url("./sections/about/accordeon.scss");
+@import url("./sections/about/team.scss");
+@import url("./sections/about/talent.scss");
+@import url("./sections/about/approach.scss");

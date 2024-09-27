@@ -1,9 +1,10 @@
 .section__together {
-    margin-top: 6.5rem;
+    margin-top: 4.5rem;
     padding-top: 6rem;
     background-color: var(--co);
     transition: 0.3s;
     overflow: hidden;
+    padding-bottom: 0 !important;
 
     &.white {
         background-color: var(--cw2);
@@ -102,5 +103,36 @@
     .button {
         min-width: 13rem;
         transition: 0.3s;
+    }
+}
+
+
+@media screen and (max-width: 960px) {
+    .section__together {
+        margin-top: 4rem;
+        padding-top: 0;
+    }
+    .together__cont {
+        padding: 9rem 0;
+    }
+    .tohether__title {
+        font-size: 3.5rem;
+        line-height: 4rem;
+        margin-top: 2rem;
+    }
+    .together__buttons {
+        margin-top: 4rem;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .together__buttons {
+        max-width: 21.5rem;
+        width: 100%;
+        flex-direction: column;
+        .button {
+            width: 100%;
+            min-width: inherit;
+        }
     }
 }

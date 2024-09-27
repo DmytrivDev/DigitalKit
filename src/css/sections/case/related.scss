@@ -1,3 +1,7 @@
+.section__related {
+    overflow: hidden;
+}
+
 .related__heading {
     padding-right: 10rem;
 }
@@ -31,6 +35,11 @@
             background-color: transparent;
             transform: none;
 
+            &[disabled] {
+                background-color: var(--cgl);
+                border-color: var(--cw);
+            }
+
             svg {
                 display: none;
             }
@@ -48,4 +57,76 @@
 
 .splide__slide {
     border: none !important;
+}
+
+.related__top {
+    display: none;
+}
+
+@media screen and (max-width: 960px) {
+    .related__heading {
+        padding-right: 5.5rem;
+        padding: 0;
+    }
+    .related__carousell {
+        padding-bottom: 4.5rem;
+        .splide__arrows {
+            top: inherit;
+            bottom: 0;
+            left: 0;
+            justify-content: flex-end;
+            transform: none;
+            .splide__arrow {
+                width: 3rem;
+                height: 3rem;
+                background-size: 1.28569rem;
+            }
+            &::before {
+                right: 8.5rem;
+                height: 1px;
+                background-color: var(--cgd);
+                left: 0;
+                top: 50%;
+                content: "";
+                position: absolute;
+            }
+        }
+    }
+    .related__item {
+        .project__img {
+            background-color: var(--cy);
+            padding-top: calc(93.9vw / 2);
+            img {
+                top: 5%;
+                transform: translateX(-50%) translateY(0);
+                object-fit: contain;
+                height: auto;
+            }
+        }
+    }
+    .splide__slide {
+        border: none !important;
+    }
+    .related__top {
+        top: 1rem;
+        left: 1rem;
+        right: 1rem;
+        display: flex;
+        position: absolute;
+        z-index: 5;
+        .project__tags {
+            position: static;
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .related__item {
+        .project__img {
+            padding-top: 93.9vw;
+            img {
+                top: 4%;
+            }
+        }
+    }
 }

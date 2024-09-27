@@ -17,7 +17,7 @@
     transform: translateY(-100%);
     height: 100px;
     z-index: 20;
-    box-shadow: 0px 7.125em 7.125em 0px rgba(0, 0, 0, .2);
+    box-shadow: 0px 7.125em 7.125em 0px rgba(0, 0, 0, 0.2);
 }
 
 .tabs__ctrllist {
@@ -52,12 +52,12 @@
                 background-color: var(--cw) !important;
                 color: var(--co);
 
-                span {
+                span:last-child {
                     border-color: var(--co);
                 }
             }
 
-            span {
+            span:last-child {
                 border: 1px solid var(--cg);
                 border-radius: 2rem;
                 height: 1.5rem;
@@ -130,6 +130,10 @@
 
             .tab__left {
                 max-width: 30rem;
+
+                .tab__img {
+                    display: none;
+                }
             }
 
             h2 {
@@ -176,6 +180,132 @@
             border: 1px solid var(--cgl);
             background-color: var(--cw2);
             display: inline-flex;
+        }
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .section__tabs {
+        padding: 2rem 0;
+    }
+    .tabs__continner {
+        transform: scale(1) !important;
+        display: flex;
+    }
+    .tavs__shadow {
+        display: none;
+    }
+    .tabs__ctrllist {
+        flex: 1;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        li {
+            height: 100%;
+            button {
+                height: 100%;
+                min-width: 2.5rem;
+                width: 2.5rem;
+                padding: 1rem 0.5rem;
+                font-size: 0.75rem;
+                line-height: 1.5rem;
+                border-radius: 1rem 0 0 1rem;
+                flex-direction: column-reverse;
+                span {
+                    &:first-child {
+                        writing-mode: vertical-rl;
+                        text-orientation: mixed;
+                        transform: rotate(180deg);
+                    }
+                }
+                span:last-child {
+                    padding: 0.37rem 0;
+                    writing-mode: vertical-rl;
+                    text-orientation: mixed;
+                    transform: rotate(180deg);
+                    height: 2rem;
+                    width: 1.5rem;
+                    justify-content: center;
+                }
+            }
+        }
+    }
+    .tabs__cont {
+        width: 100%;
+        .tab {
+            width: 100%;
+            min-height: 34.5rem;
+            gap: 3rem;
+            padding: 2rem 1.5rem;
+            border-radius: 0rem 0.75rem 0.75rem 0rem;
+            h2 {
+                font-size: 1.75rem;
+                line-height: 2.25rem;
+            }
+            p {
+                max-width: inherit;
+                font-size: 0.875rem;
+                line-height: 1.25rem;
+            }
+            .tab__img {
+                position: static;
+                height: 11.55rem;
+                width: 16rem;
+                display: flex;
+                justify-content: center;
+            }
+            &.secondary {
+                padding: 1.5rem;
+                justify-content: space-between;
+                flex-direction: column;
+                .tab__left {
+                    min-height: 31.5rem;
+                    width: 100%;
+                    max-width: inherit;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    .tab__img {
+                        display: flex;
+                    }
+                }
+                h2 {
+                    font-size: 1.75rem;
+                    line-height: 2.25rem;
+                }
+                p {
+                    font-size: 0.875rem;
+                }
+                .button {
+                    margin-top: 1.5rem;
+                    max-width: 16rem;
+                    width: 100%;
+                }
+                .tab__img {
+                    margin-top: 1.5rem;
+                    display: none;
+                    width: 16rem;
+                    height: 7.95rem !important;
+                    height: auto;
+                    position: static;
+                    justify-content: center;
+                    img {
+                        height: 100%;
+                        width: auto;
+                    }
+                }
+            }
+        }
+    }
+    .tabs__tags {
+        gap: 0.25rem;
+        margin-top: 2.25rem;
+
+        li {
+            span,
+            a {
+                font-size: 0.875rem;
+                padding: 0.25rem 0.75rem;
+            }
         }
     }
 }

@@ -3,6 +3,10 @@
     padding-bottom: 7.5rem;
     position: relative;
     overflow: hidden;
+
+    .button {
+        display: none;
+    }
 }
 
 .main__bg {
@@ -33,9 +37,13 @@
             content: "";
             background-color: var(--cgl);
             position: absolute;
-            transition: .1s;
+            transition: 0.1s;
         }
     }
+}
+
+.main__carousell {
+    visibility: visible !important;
 }
 
 .main__top {
@@ -48,7 +56,7 @@
 }
 
 .main__item {
-    gap: .75rem;
+    gap: 0.75rem;
     display: flex;
     flex-direction: column;
 
@@ -57,6 +65,12 @@
         line-height: 1.5rem;
         color: var(--co);
         font-weight: 600;
+
+        span {
+            &:last-child {
+                display: none;
+            }
+        }
     }
 
     p {
@@ -68,4 +82,78 @@
 
 .main__title {
     text-align: center;
+}
+
+@media screen and (max-width: 960px) {
+    .section__main {
+        padding-top: 11.25rem;
+        padding-bottom: 3.81rem;
+        .container {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+        .splide__track {
+            overflow: visible !important;
+        }
+        .button {
+            display: flex;
+            max-width: 21.5rem;
+            width: 100%;
+            margin-top: 2.5rem;
+        }
+    }
+    .main__bg {
+        padding-left: 0.25rem;
+        right: -3.25rem;
+        &.top {
+            display: none;
+        }
+    }
+    .main__topcont {
+        margin-top: 11.44em;
+    }
+    .main__top {
+        min-height: inherit;
+        gap: 0;
+        row-gap: 0;
+        padding-right: 0;
+        display: block;
+        grid-template-columns: inherit;
+    }
+    .main__item {
+        padding: 1rem;
+        padding-bottom: 1.5rem;
+        border-radius: 1rem;
+        overflow: hidden;
+        background-color: var(--cw);
+        gap: 1rem;
+        h2 {
+            font-size: 1rem;
+            line-height: 1.5rem;
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: space-between;
+            gap: 1rem;
+            span {
+                &:last-child {
+                    font-size: 0.75rem;
+                    line-height: 1.5rem;
+                    font-weight: 600;
+                    color: var(--ctf2);
+                    display: block;
+                }
+            }
+        }
+    }
+    .main__title {
+        text-align: left;
+    }
+}
+
+
+@media screen and (max-width: 640px) {
+    .main__title {
+        padding-right: 2rem;
+    }
 }

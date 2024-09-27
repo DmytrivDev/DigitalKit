@@ -8,5 +8,16 @@
     img {
         height: calc(100% - 6rem);
         width: auto;
+    } 
+}
+
+@media screen and (max-width: 960px) {
+    .case__image {
+        height: 75.7vw;
+        border-radius: .75rem;
+        margin-top: 2rem;
+        img {
+            height: 66.2%;
+        } 
     }
 }

@@ -23,13 +23,22 @@
     }
 }
 
-.allcases__list {
+.allcases__cont {
     margin-top: 2rem;
     border-top: 1px solid var(--cgd);
+    position: relative;
+
+    &:hover {
+        .allcases__window {
+            opacity: 1;
+            visibility: visible;
+        }
+    }
 }
 
 .allcases__item {
     border-bottom: 1px solid var(--cgb);
+    position: relative;
 }
 
 .allcases__link {
@@ -39,10 +48,11 @@
     gap: 1rem;
     color: var(--ct);
     flex-wrap: nowrap;
-    transition: .3s;
+    transition: 0.3s;
     box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0);
 
     .allcases__left {
+        max-width: 25rem;
         font-size: 1.5rem;
         line-height: 2rem;
         font-weight: 500;
@@ -62,6 +72,32 @@
     }
 
     &:hover {
-        box-shadow: 0 0 2.5rem rgba(0, 0, 0, .05);
+        box-shadow: 0 0 2.5rem rgba(0, 0, 0, 0.05);
     }
+}
+
+.allcases__window {
+    width: 20rem;
+    height: 14.8125rem;
+    right: 35.25rem;
+    border-radius: 1rem;
+    padding: 1rem;
+    transform: rotate(2deg);
+    position: absolute;
+    z-index: 5;
+    opacity: 0;
+    visibility: hidden;
+    transition: .1s opacity, top 0.1s ease;
+    overflow: hidden;
+}
+
+.allcases__tag {
+    padding: .25rem .5rem;
+    border-radius: 2rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    background-color: var(--cw);
+    display: inline-flex;
+    position: relative;
+    z-index: 5;
 }

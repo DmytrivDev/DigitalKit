@@ -1,6 +1,11 @@
 .section__partners {
     position: relative;
     overflow: hidden;
+
+    .hrcont {
+        padding-top: 3rem;
+        position: relative;
+    }
 }
 
 .partners__cont {
@@ -99,5 +104,32 @@
     &::after {
         right: 0;
         background: linear-gradient(90deg, rgba(249, 249, 249, 0) 0%, #f9f9f9 100%);
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .partners__cont {
+        margin-top: 2rem;
+        .hrcont {
+            padding-top: 2rem;
+        }
+    }
+    .scroll {
+        gap: 1rem;
+    }
+    .prtns__item {
+        width: 8.25rem;
+        height: 4.5rem;
+        img {
+            width: 10.25rem;
+        }
+    }
+    .partners__sh {
+        min-width: inherit;
+        &::after,
+        &::before {
+            width: 6rem;
+            height: 10.625rem;
+        }
     }
 }

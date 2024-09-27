@@ -49,3 +49,44 @@
         }
     }
 }
+
+@media screen and (max-width: 960px) {
+    .section__simple {
+        margin-top: 5.5rem;
+    }
+    .review__cont {
+        padding: 1.5rem 0;
+    }
+    .review__quote {
+        width: 3rem;
+        height: 3rem;
+    }
+    .review__body {
+        width: calc(100% - 3rem);
+        padding-left: 1.5rem;
+    }
+    .review__name {
+        font-size: 1.5rem;
+        line-height: 2rem;
+        padding-top: .875rem;
+    }
+    .review__text {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+    }
+    .review__bottom {
+        margin-top: 1.5rem;
+        display: block;
+        .button {
+            margin-top: 2.5rem;
+            width: calc(100% + 4.5rem);
+            margin-left: -4.5rem;
+            font-size: 1rem;
+            line-height: 1.5rem;
+        }
+    }
+    .review__info {
+        font-size: 0.75rem;
+        line-height: 1rem;
+    }
+}

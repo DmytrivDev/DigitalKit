@@ -6,6 +6,14 @@ body {
     font-family: var(--ff);
 }
 
+.main {
+    & > section {
+        &:last-child {
+            padding-bottom: 12.5rem;
+        }
+    }
+}
+
 .container {
     max-width: 90rem;
     padding: 0 3.5rem;
@@ -66,29 +74,19 @@ h2 {
     line-height: 3.5rem;
 }
 
+h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
 .section__title {
     padding: 1.5rem 0;
+    gap: 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     align-content: center;
     position: relative;
-
-    .hr {
-        background-color: var(--cgd);
-        position: absolute;
-        left: 0;
-        width: 0;
-        height: 1px;
-
-        &.hrt {
-            top: 0;
-        }
-
-        &.hrb {
-            bottom: 0;
-        }
-    }
 
     h2 {
         max-width: calc(100% - 4rem);
@@ -101,6 +99,22 @@ h2 {
             width: 100%;
             text-align: center;
         }
+    }
+}
+
+.hr {
+    background-color: var(--cgd);
+    position: absolute;
+    left: 0;
+    width: 0;
+    height: 1px;
+
+    &.hrt {
+        top: 0;
+    }
+
+    &.hrb {
+        bottom: 0;
     }
 }
 
@@ -161,6 +175,10 @@ h2 {
     }
 }
 
+.section__bottom {
+    display: none;
+}
+
 @keyframes blink {
     50% {
         transform: rotateX(85deg); /* Початкова та кінцева позиція - не повернуте око */
@@ -187,6 +205,65 @@ h2 {
     }
     .container {
         padding: 0 1rem;
+    }
+    h1 {
+        font-size: 3.5rem;
+        line-height: 4rem;
+    }
+    h2 {
+        font-size: 2.5rem;
+        line-height: 3rem;
+    }
+    .section__title {
+        padding: 1rem 0;
+        h2 {
+            max-width: calc(100% - 3rem);
+        }
+        &.center {
+            h2 {
+                max-width: inherit;
+                text-align: left;
+            }
+        }
+    }
+    .section__simple {
+        margin-top: 3.5rem;
+    }
+    .coursorField {
+        display: none;
+    }
+    .page__heading {
+        margin-top: 9.75rem;
+        text-align: left;
+        align-items: flex-start;
+        align-content: flex-start;
+        p {
+            max-width: 30rem;
+            font-size: 1.125rem;
+            line-height: 1.5rem;
+            br {
+                display: none;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .section__title {
+        .button {
+            display: none;
+        }
+    }
+    .section__bottom {
+        margin-top: 2.5rem;
+        display: flex;
+        justify-content: center;
+        .button {
+            font-size: 1rem;
+            line-height: 1.5rem;
+            max-width: 21.5rem;
+            width: 100%;
+        }
     }
 }
 

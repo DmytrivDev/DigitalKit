@@ -1,0 +1,110 @@
+.approach__list {
+    gap: 1rem;
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+}
+
+.approach__item {
+    padding: 2rem;
+    padding-bottom: 2.5rem;
+    border-radius: 1rem;
+    background-color: var(--cw);
+}
+
+.approach__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    align-content: center;
+}
+
+.approach__info {
+    gap: 0.75rem;
+    padding-right: 1rem;
+    display: flex;
+    flex-direction: column;
+
+    p {
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+        font-weight: 600;
+        color: var(--co);
+    }
+}
+
+.approach__hand {
+    top: -0.63rem;
+    height: 5.75rem;
+    position: relative;
+
+    img {
+        height: 100%;
+        width: auto;
+        display: block;
+    }
+}
+
+.approach__text {
+    margin-top: 1rem;
+    min-height: 6.5rem;
+}
+
+.approach__tags {
+    gap: 0.5rem;
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+
+    li {
+        padding: 0.75rem 1.25rem;
+        border-radius: 2rem;
+        font-size: 0.875rem;
+        line-height: 1.5rem;
+        border: 1px solid var(--cgl);
+        font-weight: 600;
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .approach__item {
+        padding: 1.5rem 1rem;
+        border-radius: 0.75rem;
+    }
+    .approach__info {
+        gap: 1rem;
+        p {
+            font-size: 0.75rem;
+            line-height: 1rem;
+        }
+        h2 {
+            font-size: 1.75rem;
+            line-height: 2.25rem;
+        }
+    }
+    .approach__hand {
+        top: 0;
+        height: 4.188rem;
+    }
+    .approach__text {
+        margin-top: 1.25rem;
+        min-height: 5rem;
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+    }
+    .approach__tags {
+        li {
+            padding: 0.5rem 0.75rem;
+            font-size: 0.75rem;
+            line-height: 1rem;
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .approach__list {
+        grid-template-columns: 1fr;
+    }
+    .approach__text {
+        min-height: inherit;
+    }
+}
