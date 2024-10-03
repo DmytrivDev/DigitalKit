@@ -1,0 +1,43 @@
+.error {
+  &__body {
+  }
+
+  &__content {
+  }
+
+  &__preloader {
+  }
+
+  &__title {
+  }
+
+  &__text {
+  }
+  .button {
+  }
+}
+
+.mess {
+  &__user {
+  }
+
+  &__info {
+  }
+
+  &__heading {
+  }
+
+  &__name {
+  }
+
+  &__text {
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .error {
+  }
+
+  .mess {
+  }
+}
