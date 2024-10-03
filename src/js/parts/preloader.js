@@ -25,9 +25,12 @@ if (messages) {
     const centerY = window.innerHeight / 2;
 
     messages.forEach((message, index) => {
-      const offsetX = (event.clientX - centerX) / 100;
-      const offsetY = (event.clientY - centerY) / 100;
+      const offsetX = (event.clientX - centerX) / 40;
+      const offsetY = (event.clientY - centerY) / 40;
 
+      const animationDuration = Math.random() * 2 + 1; // Время от 1 до 3 секунд
+
+      message.style.transition = `transform ${animationDuration}s ease-out`;
       message.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
     });
   });

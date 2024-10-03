@@ -111,16 +111,10 @@
     transform: translateY(0);
     background-color: var(--ct);
   }
-  // 25% {
-  //   background-color: var(--ct);
-  // }
   50% {
     transform: translateY(0.38rem);
     background-color: var(--co);
   }
-  // 75% {
-  //   background-color: var(--ct);
-  // }
   100% {
     transform: translateY(0);
     background-color: var(--ct);
@@ -140,7 +134,6 @@
   align-items: center;
   gap: 0.75rem;
   transition: transform 0.2s ease-out;
-  transform: translate(0 0);
 
   &__user {
     width: 1.75rem;
