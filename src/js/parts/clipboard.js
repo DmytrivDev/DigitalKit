@@ -26,7 +26,7 @@ copyBtns?.forEach(btn => {
             btn.timer = setTimeout(() => {
               btn.classList.remove('isCopy');
               btn.timer = null;
-            }, 2000);
+            }, 1000);
           })
           .catch(err => {
             console.error('Помилка при копіюванні: ', err);
