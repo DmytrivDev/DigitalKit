@@ -40,3 +40,6 @@
 
 /* Contact */
 @import url('./sections/contact/contact.scss');
+
+/* Error */
+@import url('./sections/error/error.scss');
