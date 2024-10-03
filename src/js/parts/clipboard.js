@@ -22,7 +22,7 @@ copyBtns?.forEach(btn => {
               clearTimeout(btn.timer);
             }
 
-            // Таймер на 2 секунди для зняття класу
+            // Таймер на 1 секунди для зняття класу
             btn.timer = setTimeout(() => {
               btn.classList.remove('isCopy');
               btn.timer = null;

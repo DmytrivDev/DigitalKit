@@ -1,43 +1,247 @@
 .error {
+  padding: 15.75rem 0 11.875rem 0 !important;
+
   &__body {
+    position: relative;
   }
 
   &__content {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  &__mess {
+    .mess {
+      &:nth-child(4n + 1) {
+        .mess__user {
+          background-color: var(--co);
+        }
+      }
+      &:nth-child(4n + 2) {
+        .mess__user {
+          background-color: var(--ch);
+        }
+      }
+      &:nth-child(4n + 3) {
+        .mess__user {
+          background-color: var(--ck);
+        }
+      }
+      &:nth-child(4n) {
+        .mess__user {
+          background-color: var(--cn);
+        }
+      }
+    }
   }
 
   &__preloader {
+    border: 0.0625rem dashed var(--cj);
+    margin-bottom: 2rem;
+    padding: 1.125rem 3rem;
+    border-radius: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    span {
+      border-radius: 50%;
+      width: 0.5rem;
+      height: 0.5rem;
+      background-color: var(--ct);
+      animation: dropAndLift 1s ease forwards;
+    }
+
+    span:nth-child(1) {
+      animation-delay: 0s;
+    }
+    span:nth-child(2) {
+      animation-delay: 1s;
+    }
+    span:nth-child(3) {
+      animation-delay: 2s;
+    }
+    span:nth-child(4) {
+      animation-delay: 3s;
+    }
+    span:nth-child(5) {
+      animation-delay: 4s;
+    }
+    span:nth-child(6) {
+      animation-delay: 5s;
+    }
+    span:nth-child(7) {
+      animation-delay: 6s;
+    }
   }
 
   &__title {
+    text-align: center;
+    font-size: 6rem;
+    font-weight: 500;
+    line-height: 1.08;
+    margin-bottom: 0.5rem;
+  }
+  &__text {
+    color: var(--cg);
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 3rem;
+    p {
+      margin-bottom: 0.5rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
 
-  &__text {
-  }
   .button {
+    color: var(--cw);
+    border-radius: 16rem;
+    line-height: 1.5;
+    font-size: 1rem;
+    background-color: var(--ct);
+  }
+}
+
+@keyframes dropAndLift {
+  0% {
+    transform: translateY(0);
+    background-color: var(--ct);
+  }
+  // 25% {
+  //   background-color: var(--ct);
+  // }
+  50% {
+    transform: translateY(0.38rem);
+    background-color: var(--co);
+  }
+  // 75% {
+  //   background-color: var(--ct);
+  // }
+  100% {
+    transform: translateY(0);
+    background-color: var(--ct);
   }
 }
 
 .mess {
-  &__user {
-  }
+  position: absolute;
+  z-index: 2;
+  min-width: 12.5rem;
+  width: fit-content;
+  padding: 0.62rem 1rem;
+  border-radius: 1.25rem 1.25rem 1.25rem 0px;
+  border: 0.0625rem solid var(--cgd);
+  background-color: var(--cgl);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  transition: transform 0.2s ease-out;
+  transform: translate(0 0);
 
+  &__user {
+    width: 1.75rem;
+    height: 1.75rem;
+    flex-shrink: 0;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    span {
+      color: var(--cw);
+      text-align: center;
+      font-size: 0.75rem;
+      font-weight: 500;
+      line-height: normal;
+    }
+  }
   &__info {
   }
-
   &__heading {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
   }
-
   &__name {
+    font-size: 0.75rem;
+    font-weight: 300;
+    line-height: 1.33;
   }
-
+  &__time {
+    color: var(--cg);
+    font-size: 0.5rem;
+    font-weight: 300;
+    line-height: 1.5;
+  }
   &__text {
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.33;
+    p {
+      margin-bottom: 0.5rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
   }
+}
+
+.mess_1 {
+  top: calc(-3.125rem - 1.19rem);
+  left: 2.94rem;
+}
+.mess_2 {
+  left: 5.69rem;
+  bottom: 5.4rem;
+}
+.mess_3 {
+  top: calc(-3.125rem);
+  top: 0;
+  right: 22rem;
+}
+.mess_4 {
+  bottom: calc(-3.125rem + 0.38rem);
+  left: 13.5rem;
+}
+.mess_5 {
+  bottom: calc(-3.125rem + 2.88rem);
+  right: 22.13rem;
+}
+.mess_6 {
+  right: 1.56rem;
+  bottom: 6.9rem;
+}
+.mess_7 {
+  right: 5.06rem;
+  bottom: -2rem;
 }
 
 @media screen and (max-width: 960px) {
   .error {
-  }
+    padding: 15.69rem 0 13.59rem 0 !important;
 
-  .mess {
+    &__mess {
+      display: none;
+    }
+    &__preloader {
+      margin-bottom: 2.5rem;
+    }
+
+    &__title {
+      font-size: 3.5rem;
+      line-height: 1.44;
+      margin-bottom: 1rem;
+    }
+    &__text {
+      margin-bottom: 2.75rem;
+    }
+
+    .button {
+      width: 100%;
+      max-width: 25rem;
+    }
   }
 }
