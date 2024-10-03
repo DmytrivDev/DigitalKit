@@ -9,6 +9,7 @@ import { toTop } from "./parts/footer";
 import { galCar } from "./parts/accordeon";
 import { team } from "./parts/team";
 import { talent } from "./parts/talent";
+import { reviews } from "./parts/reviews";
 
 header();
 main();
@@ -21,3 +22,4 @@ toTop();
 galCar();
 team();
 talent();
+reviews();

@@ -37,3 +37,6 @@
 @import url("./sections/about/team.scss");
 @import url("./sections/about/talent.scss");
 @import url("./sections/about/approach.scss");
+
+/* Service */
+@import url("./sections/service/service.scss");
