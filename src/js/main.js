@@ -10,6 +10,8 @@ import { galCar } from "./parts/accordeon";
 import { team } from "./parts/team";
 import { talent } from "./parts/talent";
 import { reviews } from "./parts/reviews";
+import './parts/clipboard';
+
 
 header();
 main();

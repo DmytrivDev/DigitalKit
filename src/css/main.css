@@ -1,35 +1,35 @@
 /* Settings */
-@import url("./settings/default.scss");
-@import url("./settings/variables.scss");
-@import url("./settings/fonts.scss");
-@import url("./settings/general.scss");
+@import url('./settings/default.scss');
+@import url('./settings/variables.scss');
+@import url('./settings/fonts.scss');
+@import url('./settings/general.scss');
 
 /* Header */
-@import url("./sections/header/header.scss");
-@import url("./sections/header/navigation.scss");
+@import url('./sections/header/header.scss');
+@import url('./sections/header/navigation.scss');
 
 /* Home */
-@import url("./sections/home/main.scss");
-@import url("./sections/home/tabs.scss");
-@import url("./sections/home/projects.scss");
-@import url("./sections/elements/project.scss");
-@import url("./sections/home/partners.scss");
-@import url("./sections/home/together.scss");
+@import url('./sections/home/main.scss');
+@import url('./sections/home/tabs.scss');
+@import url('./sections/home/projects.scss');
+@import url('./sections/elements/project.scss');
+@import url('./sections/home/partners.scss');
+@import url('./sections/home/together.scss');
 
 /* Footer */
-@import url("./sections/footer/footer.scss");
+@import url('./sections/footer/footer.scss');
 
 /* Cases */
-@import url("./sections/cases/cases.scss");
-@import url("./sections/elements/case.scss");
-@import url("./sections/cases/allcases.scss");
+@import url('./sections/cases/cases.scss');
+@import url('./sections/elements/case.scss');
+@import url('./sections/cases/allcases.scss');
 
 /* Case */
-@import url("./sections/case/case.scss");
-@import url("./sections/case/services.scss");
-@import url("./sections/case/gallery.scss");
-@import url("./sections/case/review.scss");
-@import url("./sections/case/related.scss");
+@import url('./sections/case/case.scss');
+@import url('./sections/case/services.scss');
+@import url('./sections/case/gallery.scss');
+@import url('./sections/case/review.scss');
+@import url('./sections/case/related.scss');
 
 /* About */
 @import url("./sections/about/about.scss");
@@ -40,3 +40,6 @@
 
 /* Service */
 @import url("./sections/service/service.scss");
+
+/* Contact */
+@import url('./sections/contact/contact.scss');
