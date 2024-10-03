@@ -35,9 +35,16 @@
             background-color: transparent;
             transform: none;
 
-            &[disabled] {
+            &:hover {
                 background-color: var(--cgl);
-                border-color: var(--cw);
+                border-color: var(--cgl);
+            }
+
+            &[disabled] {
+                background-color: var(--fw);
+                border-color: var(--cgd);
+                opacity: 0.5 !important;
+                cursor: inherit;
             }
 
             svg {

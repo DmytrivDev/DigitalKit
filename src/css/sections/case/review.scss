@@ -1,92 +1,300 @@
 .review__cont {
-    padding: 4.4rem 7rem;
-    padding-left: 9rem;
-    border-bottom: 1px solid var(--cgd);
-    border-top: 1px solid var(--cgd);
-    display: flex;
-    justify-content: space-between;
-}
-
-.review__quote {
-    width: 4rem;
-    height: 4rem;
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: contain;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64' fill='none'%3E%3Cpath d='M19 50C25.6274 50 31 44.6274 31 38C31 31.3726 25.6274 26 19 26L25.75 14H22H19L9.07702 31.25C7.76627 33.1732 7 35.4971 7 38C7 44.6274 12.3726 50 19 50Z' fill='%23FF5941'/%3E%3Cpath d='M45 50C51.6274 50 57 44.6274 57 38C57 31.3726 51.6274 26 45 26L51.75 14H48H45L35.077 31.25C33.7663 33.1732 33 35.4971 33 38C33 44.6274 38.3726 50 45 50Z' fill='%23FF5941'/%3E%3C/svg%3E");
+    padding-bottom: 5rem;
+    position: relative;
 }
 
 .review__body {
-    width: 55rem;
+    border-radius: 1.5rem 0rem 0rem 1.5rem;
+    display: flex;
+    background-color: var(--cw);
+    overflow: hidden;
 }
 
-.review__name {
-    font-size: 2rem;
-    line-height: 2.5rem;
+.review__left {
+    width: 27.5rem;
+    min-width: 27.5rem;
+    padding: 2.5rem 2rem;
+    border-right: 1px solid var(--cgd);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    background-color: var(--cw);
+    position: relative;
+    z-index: 5;
+}
+
+.review__leftinner {
+    gap: 1.5rem;
+    align-items: center;
+    align-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.review__gen {
+    font-size: 6rem;
+    line-height: 6.5rem;
     font-weight: 500;
+    color: var(--ctf2);
+}
+
+.review__stars {
+    gap: 0.5rem;
+    display: flex;
+
+    span {
+        width: 2rem;
+        height: 2rem;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 32 32' fill='none'%3E%3Cg clip-path='url(%23clip0_154_2576)'%3E%3Cpath d='M17.9998 8.72396C18.2305 9.28363 19.0139 9.51408 19.5742 9.28363C20.6454 8.8184 21.8843 8.22903 23.1883 7.39126C24.1662 6.78622 25.2309 7.85069 24.6026 8.80534C23.7415 10.0859 23.0045 11.2113 22.5626 12.2592C22.33 12.8181 22.7205 13.7625 23.2796 13.9957C24.366 14.4242 25.6498 14.6664 27.1642 14.996C28.2835 15.2597 28.2837 16.7653 27.1644 16.996C25.65 17.2926 24.3331 17.5672 23.2796 17.9957C22.72 18.2265 22.4895 19.0099 22.72 19.5702C23.1852 20.6414 23.7745 21.8803 24.6123 23.1842C25.2174 24.1622 24.1529 25.2269 23.1982 24.5986C21.9176 23.7375 20.7923 23.0005 19.7444 22.5585C19.184 22.361 18.2305 22.7157 17.9998 23.2754C17.5776 24.3457 17.3368 25.4522 17.0146 26.9327L17 27C16.7363 28.1193 15.2307 28.1193 15 27C14.7033 25.4856 14.4612 24.3618 13.9998 23.2754C13.769 22.7157 12.982 22.4524 12.4216 22.6828C11.3504 23.148 10.1232 23.7509 8.81928 24.5887C7.84133 25.1937 6.77673 24.1291 7.40507 23.1744C8.26615 21.8938 9.00282 20.8147 9.44473 19.7202C9.67733 19.1613 9.30703 18.4185 8.74786 18.1853C7.66144 17.7568 6.35781 17.3256 4.84341 16.996C3.72407 16.7323 3.72407 15.2267 4.84341 14.996C6.35781 14.6993 7.64176 14.4572 8.72818 13.9957C9.28785 13.765 9.55123 12.9779 9.32078 12.4176C8.85556 11.3464 8.25269 10.1192 7.41492 8.81524C6.80988 7.83729 7.87449 6.77269 8.82914 7.40103C10.1097 8.26211 11.3271 8.87463 12.4216 9.31655C12.982 9.51408 13.769 9.28363 13.9998 8.72396C14.4229 7.65105 14.6643 6.54185 14.9877 5.05584L15 4.99949C15.2637 3.88015 16.7693 3.88049 17 4.99983C17.2967 6.51423 17.5713 7.67046 17.9998 8.72396Z' fill='%23FF5941' stroke='%23FF5941'/%3E%3C/g%3E%3Cdefs%3E%3CclipPath id='clip0_154_2576'%3E%3Crect width='32' height='32' fill='white'/%3E%3C/clipPath%3E%3C/defs%3E%3C/svg%3E");
+    }
+}
+
+.review__all {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: var(--ctf);
+    text-align: center;
+    text-decoration-line: underline;
+}
+
+.review__clutch {
+    margin-top: 3rem;
+
+    img {
+        width: 6rem;
+        height: auto;
+        display: block;
+    }
+}
+
+.reviews__carousell {
+    width: calc(100% - 30.5rem);
+    position: static !important;
+    overflow: visible;
+
+    .splide__track {
+        overflow: visible;
+    }
+
+    .splide__arrows {
+        gap: 6.5rem;
+        transform: none;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        align-content: center;
+        position: absolute;
+
+        .splide__arrow {
+            width: 3.5rem;
+            height: 3.5rem;
+            background-size: 1.5rem;
+            border: 1px solid var(--cgd);
+            background-repeat: no-repeat;
+            background-position: center center;
+            border-radius: 50%;
+            position: static;
+            opacity: 1 !important;
+            background-color: transparent;
+            transform: none;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: var(--cgl);
+                border-color: var(--cgl);
+            }
+
+            &[disabled] {
+                background-color: var(--fw);
+                border-color: var(--cgd);
+                opacity: 0.5 !important;
+                cursor: inherit;
+            }
+
+            svg {
+                display: none;
+            }
+
+            &.splide__arrow--prev {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M15.3641 18.7272L9.00011 12.3633L15.3641 5.99932' stroke='%23191919' stroke-width='2' stroke-linejoin='bevel'/%3E%3C/svg%3E");
+            }
+
+            &.splide__arrow--next {
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M8.61396 18.7272L14.9779 12.3633L8.61396 5.99932' stroke='%23191919' stroke-width='2' stroke-linejoin='bevel'/%3E%3C/svg%3E");
+            }
+        }
+
+        .splide__pagination {
+            gap: 0.75rem;
+            row-gap: .25rem;
+            position: static;
+            display: flex;
+
+            li {
+                button {
+                    width: 1rem;
+                    height: 1rem;
+                    transform: none !important;
+                    border-radius: 50%;
+                    background-color: var(--cgd);
+                    opacity: 1 !important;
+                    margin: 0;
+                    background-color: var(--cgd);
+                    transform: 0.3s;
+
+                    &.is-active {
+                        background-color: var(--ct);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.review__item {
+    padding: 2.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.review__tag {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    color: var(--co);
 }
 
 .review__text {
-    font-size: 1.5rem;
-    line-height: 2rem;
+    font-size: 1.125rem;
+    line-height: 1.5rem;
     margin-top: 1rem;
+    min-height: 15.5rem;
     color: var(--cg);
 }
 
 .review__bottom {
-    margin-top: 3rem;
+    margin-top: 1.5rem;
 }
 
 .review__info {
-    gap: .25rem;
+    gap: 0.25rem;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
     flex-direction: column;
     color: var(--ctf);
 
     span {
-        &:last-child {
+        &:first-child {
+            font-size: 1.5rem;
+            line-height: 2rem;
             color: var(--ct);
-            font-weight: 600;
+            font-weight: 500;
         }
     }
 }
 
 @media screen and (max-width: 960px) {
-    .section__simple {
+    .section__review {
         margin-top: 5.5rem;
     }
     .review__cont {
-        padding: 1.5rem 0;
-    }
-    .review__quote {
-        width: 3rem;
-        height: 3rem;
+        padding-bottom: 4rem;
     }
     .review__body {
-        width: calc(100% - 3rem);
-        padding-left: 1.5rem;
+        border-radius: 1.5rem;
     }
-    .review__name {
-        font-size: 1.5rem;
-        line-height: 2rem;
-        padding-top: .875rem;
+    .review__left {
+        width: 20rem;
+        min-width: 20rem;
+        padding: 1.5rem;
+    }
+    .review__leftinner {
+        gap: .75rem;
+    }
+    .review__gen {
+        font-size: 3.5rem;
+        line-height: 3rem;
+    }
+    .review__stars {
+        span {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+    }
+    .review__all {
+        margin-top: 0.25rem;
+    }
+    .review__clutch {
+        margin-top: 1.75rem;
+    }
+    .reviews__carousell {
+        width: calc(100% - 22rem);
+        .splide__arrows {
+            gap: .5rem;
+            justify-content: space-between;
+            .splide__arrow {
+                width: 3rem;
+                min-width: 3rem;
+                height: 3rem;
+                background-size: 1.28569rem;
+                &:hover {
+                    background-color: var(--cw);
+                    border-color: var(--cgd);
+                }
+            }
+            .splide__pagination {
+                li {
+                    button {
+                        width: .75rem;
+                        height: .75rem;
+                    }
+                }
+            }
+        }
+    }
+    .review__item {
+        padding: 2rem 1rem;
+    }
+    .review__tag {
+        font-size: 0.75rem;
+        line-height: 1rem;
     }
     .review__text {
-        font-size: 0.875rem;
-        line-height: 1.25rem;
-    }
-    .review__bottom {
-        margin-top: 1.5rem;
-        display: block;
-        .button {
-            margin-top: 2.5rem;
-            width: calc(100% + 4.5rem);
-            margin-left: -4.5rem;
-            font-size: 1rem;
-            line-height: 1.5rem;
-        }
+        font-size: 1rem;
+        margin-top: .75rem;
+        min-height: 13rem;
     }
     .review__info {
         font-size: 0.75rem;
-        line-height: 1rem;
+        line-height: 1em;
+        span {
+            &:first-child {
+                font-size: 1rem;
+                line-height: 1.5rem;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width: 760px) {
+    .review__body {
+        display: block;
+    }
+    .review__left {
+        border-bottom: 1px solid var(--cgd);
+        width: 100%;
+        min-width: inherit;
+        border-right: none;
+    }
+    .reviews__carousell {
+        width: 100%;
     }
 }
