@@ -1,14 +1,14 @@
 // const paragraphSidebar = document.querySelector('.paragraph__sidebar');
 // if (paragraphSidebar) {
-//   articleSidebar('paragraph');
+//   tabsSidebar('paragraph');
 // }
 
 const policySidebar = document.querySelector('.policy__sidebar');
 if (policySidebar) {
-  articleSidebar('policy');
+  tabsSidebar('policy');
 }
 
-function articleSidebar(page) {
+function tabsSidebar(page) {
   let titles = document.querySelectorAll(`.${page}__content .embedContent h2`);
 
   if (titles.length < 1) {
@@ -20,7 +20,7 @@ function articleSidebar(page) {
   });
 
   const quickBodyList = document.createElement('ul');
-  quickBodyList.classList.add(`${page}__article`, 'ankor');
+  quickBodyList.classList.add(`${page}__tabs`, 'ankor');
 
   let cl = 'active';
   titles.forEach((title, index) => {

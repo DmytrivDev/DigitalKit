@@ -28,7 +28,7 @@
     padding-top: 3rem;
     padding-right: 2.375rem;
   }
-  &__article {
+  &__tabs {
     position: sticky;
     top: 8.125rem;
     left: 0;
@@ -119,7 +119,7 @@
         background-color: transparent;
       }
     }
-    &__article {
+    &__tabs {
       flex: 1 1 auto;
       position: static;
       flex-direction: row;
