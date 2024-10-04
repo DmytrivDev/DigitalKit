@@ -126,7 +126,7 @@
       li {
         margin-bottom: 1em;
         margin-left: 0.5em;
-        list-style: disc;
+        list-style-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8' viewBox='0 0 8 8' fill='none'%3E%3Ccircle cx='4' cy='4' r='3' stroke='%23FF5941'/%3E%3C/svg%3E");
 
         &:last-child {
           margin-bottom: 0;

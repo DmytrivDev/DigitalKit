@@ -48,6 +48,11 @@ body {
         border: 1px solid var(--ct);
         color: var(--ct);
     }
+
+    &.fifth {
+        border: 1px solid var(--co);
+        color: var(--co);
+    }
 }
 
 h1,
