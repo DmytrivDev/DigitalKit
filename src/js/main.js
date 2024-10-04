@@ -12,6 +12,7 @@ import { talent } from './parts/talent';
 import { reviews } from './parts/reviews';
 import './parts/clipboard';
 import './parts/preloader';
+import './parts/sidebar';
 
 header();
 main();
