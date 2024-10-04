@@ -1,7 +1,7 @@
 import Accordion from 'accordion-js';
 
 export const galCar = () => {
-  const accordeon = document.querySelectorAll('.accordeon__list');
+  const accordeon = document.querySelectorAll('.accordeonStart');
 
   if (accordeon) {
     let accOptions = {
