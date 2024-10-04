@@ -9,10 +9,10 @@ if (policySidebar) {
 }
 
 function articleSidebar(page) {
-  let titles = document.querySelectorAll(`.${page}__content h2`);
+  let titles = document.querySelectorAll(`.${page}__content .embedContent h2`);
 
   if (titles.length < 1) {
-    titles = document.querySelectorAll(`.${page}__content h3`);
+    titles = document.querySelectorAll(`.${page}__content .embedContent h3`);
   }
 
   titles.forEach((title, index) => {
@@ -100,29 +100,29 @@ function articleSidebar(page) {
   });
 }
 
-const shereLink = document.querySelector('.a2a_button_copy_link');
-let timeoutId;
+// const shereLink = document.querySelector('.a2a_button_copy_link');
+// let timeoutId;
 
-if (shereLink) {
-  shereLink.addEventListener('click', function (e) {
-    e.preventDefault();
+// if (shereLink) {
+//   shereLink.addEventListener('click', function (e) {
+//     e.preventDefault();
 
-    const tempInput = document.createElement('input');
-    const copyText = window.location.href;
-    document.body.appendChild(tempInput);
-    tempInput.value = copyText;
-    tempInput.select();
-    document.execCommand('copy');
-    document.body.removeChild(tempInput);
+//     const tempInput = document.createElement('input');
+//     const copyText = window.location.href;
+//     document.body.appendChild(tempInput);
+//     tempInput.value = copyText;
+//     tempInput.select();
+//     document.execCommand('copy');
+//     document.body.removeChild(tempInput);
 
-    shereLink.classList.add('copied');
+//     shereLink.classList.add('copied');
 
-    if (timeoutId) {
-      clearTimeout(timeoutId);
-    }
+//     if (timeoutId) {
+//       clearTimeout(timeoutId);
+//     }
 
-    timeoutId = setTimeout(function () {
-      shereLink.classList.remove('copied');
-    }, 1000);
-  });
-}
+//     timeoutId = setTimeout(function () {
+//       shereLink.classList.remove('copied');
+//     }, 1000);
+//   });
+// }
