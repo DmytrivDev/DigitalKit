@@ -65,11 +65,10 @@ export const main = () => {
       640: {
         perPage: 1,
       },
-    }
+    },
   };
 
-
-  if(carousell) {
+  if (carousell) {
     const splide = new Splide(carousell, sliderOptions);
     checkWidth(carousell, splide);
 
@@ -77,12 +76,26 @@ export const main = () => {
       checkWidth(carousell, splide);
     });
   }
+
+  document.querySelectorAll('.service__arrow')?.forEach(function (arrow) {
+    arrow.addEventListener('click', function () {
+      const currentSection = this.closest('section');
+
+      if (currentSection) {
+        const nextSection = currentSection.nextElementSibling;
+
+        if (nextSection) {
+          nextSection.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    });
+  });
 };
 
 function checkWidth(carousell, splide) {
   const ww = window.innerWidth;
   const carList = carousell.querySelector('.main__top');
-  
+
   if (ww < 960) {
     carList.classList.add('splide__list');
     splide.mount();
