@@ -32,15 +32,15 @@
 @import url('./sections/case/related.scss');
 
 /* About */
-@import url("./sections/about/about.scss");
-@import url("./sections/about/accordeon.scss");
-@import url("./sections/about/team.scss");
-@import url("./sections/about/talent.scss");
-@import url("./sections/about/approach.scss");
+@import url('./sections/about/about.scss');
+@import url('./sections/about/accordeon.scss');
+@import url('./sections/about/team.scss');
+@import url('./sections/about/talent.scss');
+@import url('./sections/about/approach.scss');
 
 /* Service */
-@import url("./sections/service/service.scss");
-@import url("./sections/service/allservices.scss");
+@import url('./sections/service/service.scss');
+@import url('./sections/service/allservices.scss');
 
 /* Contact */
 @import url('./sections/contact/contact.scss');
@@ -50,3 +50,6 @@
 
 /* Error */
 @import url('./sections/error/error.scss');
+
+/* Blog */
+@import url('./sections/blog/blog.scss');

@@ -75,12 +75,14 @@ function articleSidebar(page) {
       const target = document.querySelector(href);
       if (!target) return;
 
-      const offset = target.offsetTop + 10;
+      const offset = target.offsetTop + 115;
+      console.log(offset);
       const head = headerHeight;
       let ofF = offset;
 
       if (this.classList.contains('tab')) {
         ofF = offset - head;
+        console.log(ofF);
       }
 
       let topic = this.dataset.topic || this.textContent;
