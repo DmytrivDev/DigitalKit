@@ -52,7 +52,7 @@ function articleSidebar(page) {
       const headerHeight = document.querySelector('.header').offsetHeight;
       let activeLink = links[0];
       headers.forEach((header, i) => {
-        if (scrollTop >= header.offsetTop - headerHeight) {
+        if (scrollTop >= header.offsetTop - headerHeight - 115) {
           activeLink = links[i];
         }
       });
@@ -76,13 +76,11 @@ function articleSidebar(page) {
       if (!target) return;
 
       const offset = target.offsetTop + 115;
-      console.log(offset);
       const head = headerHeight;
       let ofF = offset;
 
       if (this.classList.contains('tab')) {
         ofF = offset - head;
-        console.log(ofF);
       }
 
       let topic = this.dataset.topic || this.textContent;

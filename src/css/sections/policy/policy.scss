@@ -39,16 +39,18 @@
       overflow: hidden;
     }
     a {
-      display: block;
-      position: relative;
+      display: flex;
+      align-items: start;
+      gap: 0.75rem;
       color: var(--ctf);
       font-weight: 600;
       transition: all 0.15s ease-in;
+      transform: translateX(-0.75rem);
       &::before {
         content: "";
-        position: absolute;
+        flex-shrink: 0;
+        position: relative;
         top: 0.56rem;
-        left: -0.75rem;
         border-radius: 50%;
         width: 0.25rem;
         height: 0.25rem;
@@ -56,14 +58,14 @@
         transition: all 0.15s ease-in;
       }
       &.active {
-        margin-left: 0.75rem;
+        transform: translateX(0);
         color: var(--co);
         &::before {
           background-color: var(--co);
         }
       }
       &:hover {
-        margin-left: 0.75rem;
+        transform: translateX(0);
         color: var(--co);
         &::before {
           background-color: var(--co);
@@ -198,6 +200,7 @@
       a {
         text-wrap: nowrap;
         white-space: nowrap;
+        transform: translateX(0);
         &::before {
           display: none;
         }
@@ -205,7 +208,6 @@
           margin-left: 0;
         }
         &:hover {
-          margin-left: 0;
           color: var(--ctf);
         }
       }
