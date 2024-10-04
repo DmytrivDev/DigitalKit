@@ -40,6 +40,7 @@
 
 /* Service */
 @import url("./sections/service/service.scss");
+@import url("./sections/service/allservices.scss");
 
 /* Contact */
 @import url('./sections/contact/contact.scss');
