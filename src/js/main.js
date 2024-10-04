@@ -10,6 +10,7 @@ import { galCar } from './parts/accordeon';
 import { team } from './parts/team';
 import { talent } from './parts/talent';
 import { reviews } from './parts/reviews';
+import { allservices } from './parts/allservices';
 import './parts/clipboard';
 import './parts/preloader';
 
@@ -25,3 +26,4 @@ galCar();
 team();
 talent();
 reviews();
+allservices();

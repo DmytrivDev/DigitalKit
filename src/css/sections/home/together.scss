@@ -6,6 +6,12 @@
     overflow: hidden;
     padding-bottom: 0 !important;
 
+    .tohether__title {
+        &:first-child {
+            margin: 0;
+        }
+    }
+
     &.white {
         background-color: var(--cw2);
 
@@ -38,9 +44,11 @@
 
 .together__cont {
     padding: 7.5rem 0;
+    min-height: 100vh;
     flex-direction: column;
     align-items: center;
     align-content: center;
+    justify-content: center;
 }
 
 .together__img {
@@ -104,6 +112,10 @@
         min-width: 13rem;
         transition: 0.3s;
     }
+
+    &.biggerMargin {
+        margin-top: 2.5rem;
+    }
 }
 
 
@@ -122,6 +134,10 @@
     }
     .together__buttons {
         margin-top: 4rem;
+
+        &.biggerMargin {
+            margin-top: 5.5rem;
+        }
     }
 }
 
