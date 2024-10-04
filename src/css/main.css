@@ -45,5 +45,8 @@
 /* Contact */
 @import url('./sections/contact/contact.scss');
 
+/* Policy */
+@import url('./sections/policy/policy.scss');
+
 /* Error */
 @import url('./sections/error/error.scss');
