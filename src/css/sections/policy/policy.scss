@@ -110,12 +110,13 @@
       padding: 1.5rem 1rem;
       overflow-x: auto;
       display: flex;
+
       &::-webkit-scrollbar {
         -webkit-appearance: none;
         height: 0;
       }
       &::-webkit-scrollbar-thumb {
-        background-color: var(--ct);
+        background-color: transparent;
       }
     }
     &__article {
