@@ -1,4 +1,241 @@
+.policy {
+  padding-top: 9.625rem;
+
+  &__heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 1rem;
+    padding-bottom: 3.5rem;
+  }
+  &__title {
+    font-size: 6rem;
+    font-weight: 500;
+    line-height: 1.08;
+  }
+  &__update {
+    flex-shrink: 0;
+    color: var(--cg);
+    margin-bottom: 1rem;
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 13rem 1fr;
+    border-top: 0.0625rem solid var(--cgd);
+  }
+  &__sidebar {
+    padding-top: 3rem;
+    padding-right: 2.375rem;
+  }
+  &__article {
+    position: sticky;
+    top: 8.125rem;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    li {
+      overflow: hidden;
+    }
+    a {
+      display: block;
+      position: relative;
+      color: var(--ctf);
+      font-weight: 600;
+      transition: all 0.15s ease-in;
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0.56rem;
+        left: -0.75rem;
+        border-radius: 50%;
+        width: 0.25rem;
+        height: 0.25rem;
+        background-color: var(--ctf);
+        transition: all 0.15s ease-in;
+      }
+      &.active {
+        margin-left: 0.75rem;
+        color: var(--co);
+        &::before {
+          background-color: var(--co);
+        }
+      }
+      &:hover {
+        margin-left: 0.75rem;
+        color: var(--co);
+        &::before {
+          background-color: var(--co);
+        }
+      }
+    }
+  }
+
+  &__content {
+    border-left: 0.0625rem solid var(--cgd);
+    padding-top: 3rem;
+    padding-left: 7.875rem;
+
+    font-size: 1em;
+    line-height: 1.5em;
+    color: var(--cm);
+
+    & > * {
+      margin-top: 1.5em;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+        border-bottom: none !important;
+      }
+    }
+
+    b,
+    strong {
+      font-weight: 600;
+    }
+
+    h1,
+    h2 {
+      font-size: 3rem;
+      font-weight: 500;
+      line-height: 1.16;
+      margin-top: 2.5rem;
+      margin-bottom: 2rem;
+    }
+    h3,
+    h4,
+    h5 {
+      font-size: 1.5rem;
+      line-height: 1.33;
+      font-weight: 400;
+      margin-top: 2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    ul {
+      margin-left: 1em;
+
+      li {
+        margin-bottom: 1em;
+        margin-left: 0.5em;
+        list-style: disc;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+
+    ol {
+      padding-left: 1em;
+      margin-left: 0;
+
+      li {
+        margin-bottom: 0.5em;
+        list-style: decimal;
+        margin-left: 0;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 960px) {
   .policy {
+    padding: 9.625rem 0 7.625rem 0 !important;
+
+    &__heading {
+      justify-content: stretch;
+      flex-direction: column-reverse;
+      align-items: stretch;
+      gap: 1.5rem;
+      padding-bottom: 2rem;
+    }
+    &__title {
+      font-size: 3.5rem;
+      line-height: 1.44;
+    }
+    &__update {
+      font-size: 0.875rem;
+      line-height: 1.42;
+      margin-bottom: 0;
+    }
+
+    &__body {
+      grid-template-columns: 1fr;
+    }
+    &__sidebar {
+      margin: 0 -1rem;
+      padding: 1.5rem 1rem;
+      overflow-x: auto;
+      display: flex;
+      &::-webkit-scrollbar {
+        -webkit-appearance: none;
+        height: 0;
+      }
+      &::-webkit-scrollbar-thumb {
+        background-color: var(--ct);
+      }
+    }
+    &__article {
+      flex: 1 1 auto;
+      position: static;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      gap: 1rem;
+      li {
+        overflow: visible;
+      }
+      a {
+        text-wrap: nowrap;
+        white-space: nowrap;
+        &::before {
+          display: none;
+        }
+        &.active {
+          margin-left: 0;
+        }
+        &:hover {
+          margin-left: 0;
+          color: var(--ctf);
+        }
+      }
+    }
+
+    &__content {
+      border-top: 0.0625rem solid var(--cgd);
+      border-left: none;
+      padding: 2rem 0 0 0;
+
+      font-size: 0.875em;
+      line-height: 1.25em;
+
+      & > * {
+        margin-top: 1em;
+      }
+
+      h1,
+      h2 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+      }
+      h3,
+      h4,
+      h5 {
+        font-size: 1rem;
+        line-height: 1.5;
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+      }
+    }
   }
 }

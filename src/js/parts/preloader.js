@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const spans = document.querySelectorAll('.error__preloader span');
-  const totalAnimationDuration = 7;
+  const totalAnimationDuration = 3.5;
 
   if (spans) {
     function startAnimation() {

@@ -13,6 +13,7 @@ import { reviews } from './parts/reviews';
 import { allservices } from './parts/allservices';
 import './parts/clipboard';
 import './parts/preloader';
+import './parts/sidebar';
 
 header();
 main();

@@ -38,7 +38,8 @@
   }
 
   &__preloader {
-    border: 0.0625rem dashed var(--cj);
+    position: relative;
+    border: 0.0625rem dashed transparent;
     margin-bottom: 2rem;
     padding: 1.125rem 3rem;
     border-radius: 2rem;
@@ -46,34 +47,48 @@
     align-items: center;
     gap: 0.75rem;
 
+    &::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-50%);
+      width: 14rem;
+      height: 2.75rem;
+      background-size: 14rem 2.75rem;
+      background-position: center center;
+      background-repeat: no-repeat;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='226' height='46' viewBox='0 0 226 46' fill='none'%3E%3Crect x='1' y='1' width='224' height='44' rx='22' stroke='%23CDCDCD' stroke-linecap='round' stroke-dasharray='8 8'/%3E%3C/svg%3E");
+    }
+
     span {
       border-radius: 50%;
       width: 0.5rem;
       height: 0.5rem;
       background-color: var(--ct);
-      animation: dropAndLift 1s ease forwards;
+      animation: dropAndLift 0.5s ease forwards;
     }
 
     span:nth-child(1) {
       animation-delay: 0s;
     }
     span:nth-child(2) {
-      animation-delay: 1s;
+      animation-delay: 0.5s;
     }
     span:nth-child(3) {
-      animation-delay: 2s;
+      animation-delay: 1s;
     }
     span:nth-child(4) {
-      animation-delay: 3s;
+      animation-delay: 1.5s;
     }
     span:nth-child(5) {
-      animation-delay: 4s;
+      animation-delay: 2s;
     }
     span:nth-child(6) {
-      animation-delay: 5s;
+      animation-delay: 2.5s;
     }
     span:nth-child(7) {
-      animation-delay: 6s;
+      animation-delay: 3s;
     }
   }
 
@@ -109,15 +124,20 @@
 @keyframes dropAndLift {
   0% {
     transform: translateY(0);
-    background-color: var(--ct);
+    // background-color: var(--ct);
+  }
+  20% {
+    background-color: var(--co);
   }
   50% {
     transform: translateY(0.38rem);
+  }
+  90% {
+    // background-color: var(--ct);
     background-color: var(--co);
   }
   100% {
     transform: translateY(0);
-    background-color: var(--ct);
   }
 }
 
@@ -183,7 +203,7 @@
 }
 
 .mess_1 {
-  top: calc(-3.125rem - 1.19rem);
+  top: calc(-3.5rem - 1.19rem);
   left: 2.94rem;
 }
 .mess_2 {
@@ -191,17 +211,16 @@
   bottom: 5.4rem;
 }
 .mess_3 {
-  top: calc(-3.125rem);
-  top: 0;
+  top: calc(-3.5rem);
   right: 22rem;
 }
 .mess_4 {
-  bottom: calc(-3.125rem + 0.38rem);
+  bottom: calc(-3.5rem - 0.38rem);
   left: 13.5rem;
 }
 .mess_5 {
-  bottom: calc(-3.125rem + 2.88rem);
-  right: 22.13rem;
+  bottom: calc(-3.5rem - 2.88rem);
+  right: 24.13rem;
 }
 .mess_6 {
   right: 1.56rem;
