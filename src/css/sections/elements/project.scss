@@ -10,6 +10,16 @@
     overflow: hidden;
 }
 
+.project__imginner {
+    border-radius: 1rem;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    overflow: hidden;
+}
+
 .project__tags {
     bottom: 1.5rem;
     left: 1.5rem;
@@ -25,7 +35,7 @@
             border-radius: 1.5rem;
             font-size: 0.875rem;
             line-height: 1.5rem;
-            backdrop-filter: blur(.75rem);
+            backdrop-filter: blur(0.75rem);
             background: rgba(254, 254, 254, 0.64);
             font-weight: 600;
             color: var(--ct);
@@ -44,8 +54,34 @@
     color: var(--ct);
 }
 
+@media screen and (min-width: 960px) {
+    .project__item {
+        .project__imginner {
+            transition: 0.3s;
+            img {
+                transition: 0.3s;
+            }
+        }
+        &:hover {
+            .project__imginner {
+                left: 0.5rem;
+                right: 0.5rem;
+                top: 0.5rem;
+                bottom: 0.5rem;
+                .cover {
+                    width: calc(100% + 1rem);
+                    height: calc(100% + 1rem);
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 960px) {
     .project__img {
+        border-radius: 0.75rem;
+    }
+    .project__imginner {
         border-radius: 0.75rem;
     }
     .project__tags {
@@ -56,7 +92,7 @@
         li {
             span,
             a {
-                padding: 0.25em .75rem;
+                padding: 0.25em 0.75rem;
                 font-size: 0.75rem;
                 line-height: 1.25rem;
             }

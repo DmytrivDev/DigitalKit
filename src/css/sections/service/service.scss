@@ -1,6 +1,32 @@
 .section__service {
     position: relative;
     overflow: hidden;
+
+    &.oneService {
+        .service__content {
+            padding-top: 12rem;
+            padding-bottom: 10.5rem;
+            min-height: inherit;
+
+            .service__inner {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                align-items: flex-end;
+                align-content: flex-end;
+
+                .service__arrow {
+                    margin-bottom: 1.75rem;
+                }
+            }
+
+            h1 {
+                font-size: 6rem;
+                line-height: 6.5rem;
+                max-width: 60rem;
+            }
+        }
+    }
 }
 
 .service__content {
@@ -61,7 +87,7 @@
     transform: rotate(-45deg) translateZ(0);
     background-size: cover;
     background-repeat: repeat-x;
-    transition: .3s;
+    transition: 0.3s;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M12 3.51465L3.51472 11.9999M3.51472 11.9999L12 20.4852M3.51472 11.9999H20.4853' stroke='%23191919' stroke-width='3' stroke-linejoin='bevel'/%3E%3C/svg%3E");
 
     &:hover {
@@ -70,8 +96,26 @@
     }
 }
 
-
 @media screen and (max-width: 960px) {
+    .section__service {
+        &.oneService {
+            .service__content {
+                padding-top: 8rem;
+                padding-bottom: 4.5rem;
+                min-height: 100vh;
+                .service__inner {
+                    .service__arrow {
+                        margin-bottom: 0.75rem;
+                    }
+                }
+                h1 {
+                    font-size: 8vw;
+                    line-height: 1.1;
+                    max-width: calc(100% - 4rem);
+                }
+            }
+        }
+    }
     .service__content {
         padding-bottom: 4.44rem;
         h1 {
@@ -84,8 +128,18 @@
     }
 }
 
-
 @media screen and (max-width: 640px) {
+    .section__service {
+        &.oneService {
+            .service__content {
+                h1 {
+                    font-size: 3.5rem;
+                    line-height: 4rem;
+                    max-width: inherit;
+                }
+            }
+        }
+    }
     .service__content {
         h1 {
             font-size: 3.5rem;

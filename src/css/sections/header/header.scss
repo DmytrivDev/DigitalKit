@@ -6,19 +6,17 @@
     z-index: 20;
 }
 
-body:not(.overHideMob) {
+body:not(.overHideMob).red {
     .header {
-        &.changed {
-            .logo__sm {
-                img {
-                    filter: brightness(0) invert(1);
-                }
+        .logo__sm {
+            img {
+                filter: brightness(0) invert(1);
             }
-    
-            .button {
-                background-color: var(--cw);
-                color: var(--co);
-            }
+        }
+
+        .button {
+            background-color: var(--cw);
+            color: var(--co);
         }
     }
 }
@@ -36,7 +34,7 @@ body:not(.overHideMob) {
     height: 2.5rem;
     width: 9rem;
     position: relative;
-    transition: .5s;
+    transition: 0.5s;
 
     &.scroled {
         width: 2.5rem;
@@ -63,7 +61,7 @@ body:not(.overHideMob) {
     bottom: 0;
     display: block;
     opacity: 1;
-    transition: .5s;
+    transition: 0.5s;
 
     img {
         min-width: 7.884rem;
@@ -82,12 +80,12 @@ body:not(.overHideMob) {
     position: absolute;
     top: 0;
     right: 0;
-    transition: .5s;
+    transition: 0.5s;
 
     img {
         width: 100%;
         height: 100%;
-        transition: .3s;
+        transition: 0.3s;
     }
 }
 
@@ -149,7 +147,7 @@ body:not(.overHideMob) {
                 justify-content: center;
                 color: var(--ct);
                 transition: 0.3s;
-                background-color: var(--cw);
+                background-color: var(--cw2);
 
                 &.current-menu-item {
                     a {

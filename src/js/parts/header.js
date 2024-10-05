@@ -17,31 +17,6 @@ export const header = () => {
       logoCont.classList.remove('scroled');
     }
   });
-
-  const header = document.querySelector('.header');
-  const changeHeaderBlocks = document.querySelectorAll('.changeHeader');
-
-  function checkChangeHeader() {
-    let isAnyBlockVisible = false;
-
-    changeHeaderBlocks.forEach(el => {
-      const rect = el.getBoundingClientRect();
-
-      if (rect.top <= 0 && rect.bottom >= 0) {
-        isAnyBlockVisible = true;
-      }
-    });
-
-    if (isAnyBlockVisible) {
-      header.classList.add('changed');
-    } else {
-      header.classList.remove('changed');
-    }
-  }
-
-  window.addEventListener('scroll', checkChangeHeader);
-
-  checkChangeHeader();
 };
 
 const openNav = evt => {

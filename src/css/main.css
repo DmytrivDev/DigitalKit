@@ -42,6 +42,10 @@
 @import url('./sections/service/service.scss');
 @import url('./sections/service/allservices.scss');
 @import url('./sections/service/process.scss');
+@import url('./sections/service/super.scss');
+
+/* Services */
+@import url('./sections/services/ourservices.scss');
 
 /* Contact */
 @import url('./sections/contact/contact.scss');

@@ -38,7 +38,7 @@ export const tabs = () => {
         }
 
 
-        const transformValue = (percent / 100) * 10;
+        const transformValue = (percent / 100) * 5;
         setTransform(transformValue);
       }
     });
@@ -46,7 +46,7 @@ export const tabs = () => {
 };
 
 function setTransform(value) {
-  const newVal = value + 90;
+  const newVal = value + 95;
   const newValTr = (10 - value) * 0.5;
   const newValSh = value * 20;
   const tabsContainer = document.querySelector('.tabs__continner');

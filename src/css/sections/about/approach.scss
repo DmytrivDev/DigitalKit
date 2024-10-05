@@ -9,6 +9,10 @@
     padding-bottom: 2.5rem;
     border-radius: 1rem;
     background-color: var(--cw);
+
+    * {
+        color: var(--ct) !important;
+    }
 }
 
 .approach__top {
@@ -28,7 +32,7 @@
         font-size: 0.875rem;
         line-height: 1.5rem;
         font-weight: 600;
-        color: var(--co);
+        color: var(--co) !important;
     }
 }
 

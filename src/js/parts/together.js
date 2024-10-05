@@ -1,21 +1,23 @@
 export const together = () => {
+  const body = document.querySelector('body');
   const section = document.querySelector('.section__together');
+  const ww = window.innerHeight / 4;
 
   if (section) {
     const rect = section.getBoundingClientRect();
 
     if (rect.top <= 0) {
-      section.classList.remove('white');
+      body.classList.add('red');
     } else {
-      section.classList.add('white');
+      body.classList.remove('red');
     }
 
     document.addEventListener('scroll', function () {
       const rect2 = section.getBoundingClientRect();
-      if (rect2.top <= 0) {
-        section.classList.remove('white');
+      if (rect2.top - ww <= 0) {
+        body.classList.add('red');
       } else {
-        section.classList.add('white');
+        body.classList.remove('red');
       }
     });
   }

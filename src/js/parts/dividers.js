@@ -16,6 +16,12 @@ export const dividers = () => {
           const scrolledPixels = viewportHeight - containerRect.top;
           let percent = (scrolledPixels / pixelMark) * 100;
 
+          if (percent === 100 || percent > 100) {
+            el.classList.add('startAnim');
+          } else {
+            el.classList.remove('startAnim');
+          }
+
           if (percent > 100) {
             percent = 100;
           } else if (percent < 0) {
