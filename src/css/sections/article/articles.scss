@@ -1,0 +1,120 @@
+.articles {
+  overflow: hidden;
+
+  &__body {
+    padding-top: 2rem;
+    border-top: 0.0625rem solid var(--cgd);
+
+    & > .splide__arrows {
+      display: none;
+    }
+  }
+
+  &__heading {
+    margin-bottom: 2rem;
+  }
+  &__title {
+    font-size: 3rem;
+    font-weight: 500;
+    line-height: 1.16;
+  }
+
+  &__carousell {
+  }
+
+  &__box {
+    padding: 1.5rem 1.5rem 2rem 1.5rem;
+  }
+  &__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.44rem;
+
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.71;
+  }
+  &__direction {
+    padding: 0.25rem 0.75rem;
+    border-radius: 16rem;
+    background-color: transparent;
+    backdrop-filter: blur(0.75rem);
+    color: var(--cw);
+  }
+  &__date {
+    color: var(--ctf2);
+  }
+
+  &__name {
+    display: block;
+    color: var(--ct);
+    font-size: 2rem;
+    font-weight: 500;
+    line-height: 1.25;
+    margin-bottom: 1rem;
+  }
+  &__desc {
+    color: var(--cg);
+    p {
+      margin-bottom: 0.25rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__img {
+    position: relative;
+    display: block;
+    padding-top: 55%;
+  }
+
+  .splide__slide {
+    cursor: default !important;
+    border-radius: 1rem;
+    overflow: hidden;
+    border: 0.0625rem solid var(--cw);
+    background-color: var(--cw);
+  }
+  .splide__track {
+    overflow: hidden !important;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .articles {
+    &__carousell {
+      padding-bottom: 4.5rem;
+    }
+
+    &__heading {
+      margin-bottom: 1.5rem;
+    }
+    &__title {
+      font-size: 2.5rem;
+      line-height: 1.2;
+    }
+
+    &__box {
+      padding: 1.5rem 1rem 2rem 1rem;
+    }
+    &__top {
+      font-size: 0.75rem;
+      line-height: 1.31;
+    }
+
+    &__name {
+      font-size: 1.5rem;
+      line-height: 1.33;
+      margin-bottom: 0.75rem;
+    }
+    &__img {
+      padding-top: 45%;
+    }
+
+    .splide__track {
+      overflow: visible !important;
+    }
+  }
+}

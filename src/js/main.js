@@ -1,5 +1,6 @@
 import { tabs } from './parts/tabs';
 import { related } from './parts/related';
+import { articles } from './parts/articles';
 import { main } from './parts/main';
 import { pointer } from './parts/pointer';
 import { dividers } from './parts/dividers';
@@ -22,6 +23,7 @@ tabs();
 dividers();
 pointer();
 related();
+articles();
 together();
 toTop();
 galCar();
