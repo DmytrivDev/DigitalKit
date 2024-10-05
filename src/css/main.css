@@ -54,3 +54,7 @@
 
 /* Blog */
 @import url('./sections/blog/blog.scss');
+
+/* Article */
+@import url('./sections/article/article.scss');
+@import url('./sections/article/articles.scss');

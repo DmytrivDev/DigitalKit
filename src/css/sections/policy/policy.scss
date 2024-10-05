@@ -28,7 +28,7 @@
     padding-top: 3rem;
     padding-right: 2.375rem;
   }
-  &__article {
+  &__tabs {
     position: sticky;
     top: 8.125rem;
     left: 0;
@@ -110,15 +110,16 @@
       padding: 1.5rem 1rem;
       overflow-x: auto;
       display: flex;
+
       &::-webkit-scrollbar {
         -webkit-appearance: none;
         height: 0;
       }
       &::-webkit-scrollbar-thumb {
-        background-color: var(--ct);
+        background-color: transparent;
       }
     }
-    &__article {
+    &__tabs {
       flex: 1 1 auto;
       position: static;
       flex-direction: row;
