@@ -1,7 +1,7 @@
-// const paragraphSidebar = document.querySelector('.paragraph__sidebar');
-// if (paragraphSidebar) {
-//   tabsSidebar('paragraph');
-// }
+const articleSidebar = document.querySelector('.article__sidebar');
+if (articleSidebar) {
+  tabsSidebar('article');
+}
 
 const policySidebar = document.querySelector('.policy__sidebar');
 if (policySidebar) {
@@ -28,7 +28,13 @@ function tabsSidebar(page) {
     const link = document.createElement('a');
     link.className = `${cl} tab`;
     link.setAttribute('href', `#title-${index + 1}`);
-    link.textContent = title.textContent;
+
+    if (page === 'article') {
+      link.textContent = `${index + 1}. ${title.textContent}`;
+    } else {
+      link.textContent = title.textContent;
+    }
+    
     listItem.appendChild(link);
     quickBodyList.appendChild(listItem);
 
