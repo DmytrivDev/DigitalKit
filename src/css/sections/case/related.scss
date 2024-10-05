@@ -1,5 +1,10 @@
 .section__related {
+    padding-bottom: 2.5rem;
     overflow: hidden;
+
+    & + .section__simple {
+        margin-top: 10rem;
+    }
 }
 
 .related__heading {
@@ -24,6 +29,13 @@
 }
 
 @media screen and (max-width: 960px) {
+    .section__related {
+        padding-bottom: 0;
+        overflow: hidden;
+        & + .section__simple {
+            margin-top: 5.5rem;
+        }
+    }
     .related__heading {
         padding-right: 5.5rem;
         padding: 0;

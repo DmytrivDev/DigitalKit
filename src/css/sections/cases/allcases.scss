@@ -96,7 +96,6 @@
 
 .allcases__cont {
     margin-top: 2rem;
-    border-top: 1px solid var(--cgd);
     position: relative;
 
     &:hover {
@@ -108,13 +107,24 @@
 }
 
 .allcases__item {
-    border-bottom: 1px solid var(--cgd);
+    border-top: 1px solid var(--cgd);
     position: relative;
+    transition: .3s;
+
+    &:last-child {
+        border-bottom: 1px solid var(--cgd);
+    }
 
     &:hover {
+        border-top-color: transparent !important;
+        border-bottom-color: transparent !important;
         .allcases__link {
+            position: relative;
             box-shadow: 0 0 1.25rem 0 rgba(0, 0, 0, 0.08);
             background-color: var(--cw2);
+        }
+        & + li {
+            border-top-color: transparent !important; 
         }
     }
 }

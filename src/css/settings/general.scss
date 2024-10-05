@@ -105,6 +105,12 @@ h3 {
             text-align: center;
         }
     }
+
+    &.withBg {
+        padding: 2rem 3rem;
+        border-radius: 4rem;
+        background-color: var(--cw);
+    }
 }
 
 .hr {
@@ -448,6 +454,10 @@ h3 {
                 max-width: inherit;
                 text-align: left;
             }
+        }
+        &.withBg {
+            padding: 1.5rem 2rem;
+            border-radius: 5rem;
         }
     }
     .section__simple {
