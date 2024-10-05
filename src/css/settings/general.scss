@@ -4,6 +4,24 @@ body {
     background-color: var(--cw2);
     color: var(--ct);
     font-family: var(--ff);
+    transition: 0.1s background-color;
+
+    &.red {
+        background-color: var(--co);
+
+        .main * {
+            color: var(--cw);
+        }
+
+        .hr {
+            background-color: var(--ctf2);
+            opacity: 0.5;
+        }
+    }
+}
+
+button {
+    font-family: var(--ff);
 }
 
 .main {
@@ -52,6 +70,11 @@ body {
     &.fifth {
         border: 1px solid var(--co);
         color: var(--co);
+    }
+
+    &.sixth {
+        vertical-align: var(--ct);
+        color: var(--cw);
     }
 }
 
@@ -119,6 +142,7 @@ h3 {
     left: 0;
     width: 0;
     height: 1px;
+    transition: .1s;
 
     &.hrt {
         top: 0;
@@ -263,6 +287,10 @@ h3 {
         display: flex;
         align-items: center;
         align-content: center;
+
+        * {
+            color: var(--ct) !important;
+        }
 
         & > a {
             width: 3rem;
@@ -422,6 +450,18 @@ h3 {
     html,
     body {
         font-size: 1.11vw;
+    }
+}
+
+@media screen and (min-width: 960px) {
+    .section__title {
+        transition: 0.3s ease-out;
+        &.anim.startAnim {
+            &:hover {
+                padding-left: 2rem;
+                padding-right: 2rem;
+            }
+        }
     }
 }
 

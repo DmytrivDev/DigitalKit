@@ -1,3 +1,40 @@
+body {
+    &.red {
+        .reviews__carousell {
+            .splide__arrows {
+                .splide__arrow {
+                    &.splide__arrow--prev {
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M15.3641 18.7272L9.00011 12.3633L15.3641 5.99932' stroke='white' stroke-width='2' stroke-linejoin='bevel'/%3E%3C/svg%3E");
+
+                        &:hover {
+                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M15.3641 18.7272L9.00011 12.3633L15.3641 5.99932' stroke='%23191919' stroke-width='2' stroke-linejoin='bevel'/%3E%3C/svg%3E");
+                        }
+                    }
+
+                    &.splide__arrow--next {
+                        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M8.61396 18.7272L14.9779 12.3633L8.61396 5.99932' stroke='white' stroke-width='2' stroke-linejoin='bevel'/%3E%3C/svg%3E");
+
+                        &:hover {
+                            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M8.61396 18.7272L14.9779 12.3633L8.61396 5.99932' stroke='%23191919' stroke-width='2' stroke-linejoin='bevel'/%3E%3C/svg%3E");
+                        }
+                    }
+                }
+
+                .splide__pagination {
+                    li {
+                        button {
+                            background-color: var(--cj);
+                            &.is-active {
+                                background-color: var(--cw);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 .review__cont {
     padding-bottom: 5rem;
     position: relative;
@@ -90,6 +127,7 @@
         align-items: center;
         align-content: center;
         position: absolute;
+        transition: 0.3s;
 
         .splide__arrow {
             width: 3.5rem;
@@ -103,7 +141,7 @@
             opacity: 1 !important;
             background-color: transparent;
             transform: none;
-            transition: 0.3s;
+            transition: 0.1s;
 
             &:hover {
                 background-color: var(--cgl);
@@ -146,7 +184,7 @@
                     opacity: 1 !important;
                     margin: 0;
                     background-color: var(--cgd);
-                    transform: 0.3s;
+                    transform: 0.1s;
 
                     &.is-active {
                         background-color: var(--ct);
@@ -164,7 +202,8 @@
     justify-content: space-between;
     transition: 0.4s;
 
-    &.is-prev, &.duble-prev {
+    &.is-prev,
+    &.duble-prev {
         opacity: 0;
 
         &:nth-last-child(2) {

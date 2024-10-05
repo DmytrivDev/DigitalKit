@@ -1,43 +1,51 @@
+body {
+    &.red {
+        .section__together {
+            background-color: var(--co);
+
+            * {
+                color: var(--cw2);
+            }
+
+            .fourth {
+                border-color: var(--cw2);
+                color: var(--cw2);
+            }
+
+            .sixth {
+                background-color: var(--cw2);
+                color: var(--ct);
+            }
+
+            .together__img {
+                img {
+                    &:first-child {
+                        opacity: 0;
+                    }
+
+                    &:last-child {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
 .section__together {
     margin-top: 4.5rem;
-    padding-top: 6rem;
-    background-color: var(--co);
-    transition: 0.3s;
+    background-color: var(--cw2);
+    transition: 0.1s;
     overflow: hidden;
     padding-bottom: 0 !important;
+
+    * {
+        color: var(--ct);
+    }
 
     .tohether__title {
         &:first-child {
             margin: 0;
-        }
-    }
-
-    &.white {
-        background-color: var(--cw2);
-
-        * {
-            color: var(--ct);
-        }
-
-        .thirty {
-            border-color: var(--ct);
-        }
-
-        .secondary {
-            background-color: var(--ct);
-            color: var(--cw2);
-        }
-
-        .together__img {
-            img {
-                &:first-child {
-                    opacity: 1;
-                }
-
-                &:last-child {
-                    opacity: 0;
-                }
-            }
         }
     }
 }
@@ -67,10 +75,11 @@
         display: block;
         height: 100%;
         height: auto;
-        transition: 0.3s;
+        transition: 0.1s;
+        opacity: 0;
 
         &:first-child {
-            opacity: 0;
+            opacity: 1;
         }
     }
 }
@@ -97,8 +106,8 @@
     margin-top: 2.5rem;
     text-align: center;
     font-weight: 500;
-    color: var(--cw);
-    transition: 0.3s;
+    color: var(--ct);
+    transition: 0.1s;
 }
 
 .together__buttons {
@@ -110,14 +119,13 @@
 
     .button {
         min-width: 13rem;
-        transition: 0.3s;
+        transition: 0.1s;
     }
 
     &.biggerMargin {
         margin-top: 2.5rem;
     }
 }
-
 
 @media screen and (max-width: 960px) {
     .section__together {
