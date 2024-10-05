@@ -13,28 +13,6 @@
     flex-direction: column;
   }
   &__mess {
-    .mess {
-      &:nth-child(4n + 1) {
-        .mess__user {
-          background-color: var(--co);
-        }
-      }
-      &:nth-child(4n + 2) {
-        .mess__user {
-          background-color: var(--ch);
-        }
-      }
-      &:nth-child(4n + 3) {
-        .mess__user {
-          background-color: var(--ck);
-        }
-      }
-      &:nth-child(4n) {
-        .mess__user {
-          background-color: var(--cn);
-        }
-      }
-    }
   }
 
   &__preloader {
@@ -205,30 +183,52 @@
 .mess_1 {
   top: calc(-3.5rem - 1.19rem);
   left: 2.94rem;
+  .mess__user {
+    background-color: var(--co);
+  }
 }
 .mess_2 {
   left: 5.69rem;
   bottom: 5.4rem;
+  .mess__user {
+    background-color: var(--ch);
+  }
 }
 .mess_3 {
   top: calc(-3.5rem);
   right: 22rem;
+  .mess__user {
+    background-color: var(--ck);
+  }
 }
 .mess_4 {
   bottom: calc(-3.5rem - 0.38rem);
   left: 13.5rem;
+  .mess__user {
+    background-color: var(--cn);
+  }
 }
 .mess_5 {
   bottom: calc(-3.5rem - 2.88rem);
   right: 24.13rem;
+
+  .mess__user {
+    background-color: var(--co);
+  }
 }
 .mess_6 {
   right: 1.56rem;
   bottom: 6.9rem;
+  .mess__user {
+    background-color: var(--ch);
+  }
 }
 .mess_7 {
   right: 5.06rem;
   bottom: -2rem;
+  .mess__user {
+    background-color: var(--ck);
+  }
 }
 
 @media screen and (max-width: 960px) {
