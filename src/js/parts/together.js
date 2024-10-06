@@ -12,11 +12,18 @@ export const together = () => {
       body.classList.remove('red');
     }
 
-    document.addEventListener('resize', () => {
+    window.addEventListener('resize', () => {
       ww = window.innerHeight / 4;
+
+      const rect2 = section.getBoundingClientRect();
+      if (rect2.top - ww <= 0) {
+        body.classList.add('red');
+      } else {
+        body.classList.remove('red');
+      }
     });
 
-    document.addEventListener('scroll', function () {
+    window.addEventListener('scroll', function () {
       const rect2 = section.getBoundingClientRect();
       if (rect2.top - ww <= 0) {
         body.classList.add('red');

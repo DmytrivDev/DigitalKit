@@ -33,7 +33,7 @@ body {
 }
 
 .section__together {
-    margin-top: 8rem;
+    margin-top: 4.5rem;
     background-color: var(--cw2);
     transition: 0.1s;
     overflow: hidden;
@@ -52,7 +52,8 @@ body {
 
 .together__cont {
     padding: 7.5rem 0;
-    min-height: 100vh;
+    padding-bottom: 10rem;
+    min-height: 110vh;
     flex-direction: column;
     align-items: center;
     align-content: center;
