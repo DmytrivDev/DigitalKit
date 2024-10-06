@@ -33,7 +33,6 @@ body {
 }
 
 .section__together {
-    margin-top: 4.5rem;
     background-color: var(--cw2);
     transition: 0.1s;
     overflow: hidden;
@@ -129,7 +128,6 @@ body {
 
 @media screen and (max-width: 960px) {
     .section__together {
-        margin-top: 4rem;
         padding-top: 0;
     }
     .together__cont {
