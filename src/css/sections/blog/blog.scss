@@ -73,6 +73,7 @@
   overflow: hidden;
 
   &__img {
+    display: block;
     flex-shrink: 0;
     position: relative;
     width: 27rem;
