@@ -1,7 +1,7 @@
 export const together = () => {
   const body = document.querySelector('body');
   const section = document.querySelector('.section__together');
-  const ww = window.innerHeight / 4;
+  let ww = window.innerHeight / 4;
 
   if (section) {
     const rect = section.getBoundingClientRect();
@@ -11,6 +11,10 @@ export const together = () => {
     } else {
       body.classList.remove('red');
     }
+
+    document.addEventListener('resize', () => {
+      ww = window.innerHeight / 4;
+    });
 
     document.addEventListener('scroll', function () {
       const rect2 = section.getBoundingClientRect();
