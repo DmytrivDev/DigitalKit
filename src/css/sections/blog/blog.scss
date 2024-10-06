@@ -1,5 +1,5 @@
 .blog {
-  padding: 10.5rem 0 8.5rem 0;
+  padding: 10.5rem 0 0 0;
 
   &__heading {
     display: flex;
@@ -151,7 +151,7 @@
 
 @media screen and (max-width: 960px) {
   .blog {
-    padding: 9.75rem 0 5.5rem 0;
+    padding: 9.75rem 0 0 0;
 
     &__heading {
       align-items: start;
