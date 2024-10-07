@@ -72,11 +72,7 @@ function tabsSidebar(page) {
       activeLink.classList.add('active');
 
       if (page === 'policy' && isInViewport(activeLink)) {
-        activeLink.scrollIntoView({
-          behavior: 'smooth',
-          block: 'nearest',
-          inline: 'center',
-        });
+        smoothHorizontalScroll(activeLink, 100); // Центрируем активный элемент
       }
     };
 
@@ -119,29 +115,38 @@ function tabsSidebar(page) {
   });
 }
 
-// const shereLink = document.querySelector('.a2a_button_copy_link');
-// let timeoutId;
+// Кастомная функция для ускоренного горизонтального скролла с центровкой
+function smoothHorizontalScroll(element, duration) {
+  const container = document.querySelector('.policy__sidebar'); // Укажите ваш контейнер
+  const containerWidth = container.offsetWidth;
+  const elementLeft = element.offsetLeft;
+  const elementWidth = element.offsetWidth;
 
-// if (shereLink) {
-//   shereLink.addEventListener('click', function (e) {
-//     e.preventDefault();
+  // Вычисляем позицию, чтобы элемент оказался в центре
+  const targetScrollPosition =
+    elementLeft - (containerWidth / 2 - elementWidth / 2);
 
-//     const tempInput = document.createElement('input');
-//     const copyText = window.location.href;
-//     document.body.appendChild(tempInput);
-//     tempInput.value = copyText;
-//     tempInput.select();
-//     document.execCommand('copy');
-//     document.body.removeChild(tempInput);
+  let start = container.scrollLeft;
+  let change = targetScrollPosition - start;
+  let currentTime = 0;
+  const increment = 20; // Ускорение (чем меньше, тем быстрее)
 
-//     shereLink.classList.add('copied');
+  function animateScroll() {
+    currentTime += increment;
+    const val = Math.easeInOutQuad(currentTime, start, change, duration);
+    container.scrollLeft = val;
+    if (currentTime < duration) {
+      requestAnimationFrame(animateScroll);
+    }
+  }
 
-//     if (timeoutId) {
-//       clearTimeout(timeoutId);
-//     }
+  animateScroll();
+}
 
-//     timeoutId = setTimeout(function () {
-//       shereLink.classList.remove('copied');
-//     }, 1000);
-//   });
-// }
+// Функция для плавного эффекта
+Math.easeInOutQuad = function (t, b, c, d) {
+  t /= d / 2;
+  if (t < 1) return (c / 2) * t * t + b;
+  t--;
+  return (-c / 2) * (t * (t - 2) - 1) + b;
+};

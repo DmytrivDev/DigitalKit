@@ -57,18 +57,18 @@
         background-color: var(--ctf);
         transition: all 0.15s ease-in;
       }
-      &.active {
+      &:hover {
         transform: translateX(0);
         color: var(--co);
         &::before {
           background-color: var(--co);
         }
       }
-      &:hover {
-        transform: translateX(0);
-        color: var(--co);
+      &.active {
+        transform: translateX(0) !important;
+        color: var(--co) !important;
         &::before {
-          background-color: var(--co);
+          background-color: var(--co) !important;
         }
       }
     }
@@ -114,6 +114,9 @@
       overflow-x: auto;
       display: flex;
 
+      scroll-behavior: smooth;
+      /* Открыть доступ к настройке скорости */
+
       &::-webkit-scrollbar {
         -webkit-appearance: none;
         height: 0;
@@ -131,6 +134,13 @@
       a {
         text-wrap: nowrap;
         white-space: nowrap;
+        &:hover {
+          transform: translateX(-0.75rem);
+          color: var(--ctf);
+          &::before {
+            background-color: var(--ctf);
+          }
+        }
       }
     }
 
