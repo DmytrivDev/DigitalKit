@@ -18,21 +18,15 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const messages = document.querySelectorAll('.error__mess .mess');
-let mouseStopTimeout;
 
 if (messages) {
   document.addEventListener('mousemove', event => {
     const currentMousePosition = { x: event.clientX, y: event.clientY };
 
-    // Если мышка двигается, сбрасываем таймер
-    if (mouseStopTimeout) {
-      clearTimeout(mouseStopTimeout);
-    }
-
     const centerX = window.innerWidth / 2;
     const centerY = window.innerHeight / 2;
 
-    messages.forEach((message, index) => {
+    messages.forEach(message => {
       let offsetX = (currentMousePosition.x - centerX) / 20;
       let offsetY = (currentMousePosition.y - centerY) / 20;
 
