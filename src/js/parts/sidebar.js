@@ -67,15 +67,8 @@ function tabsSidebar(page) {
       activeLink.classList.add('active');
 
       if (page === 'policy') {
-        smoothHorizontalScroll(activeLink, 10); // Центрируем активный элемент
+        smoothHorizontalScroll(activeLink, 100);
       }
-      // if (page === 'policy' && isInViewport(activeLink)) {
-      //   activeLink.scrollIntoView({
-      //     behavior: 'smooth',
-      //     block: 'nearest',
-      //     inline: 'center',
-      //   });
-      // }
     };
 
     setActiveLink();
@@ -92,7 +85,11 @@ function tabsSidebar(page) {
       const target = document.querySelector(href);
       if (!target) return;
 
-      const offset = target.offsetTop + 115;
+      let offset = target.offsetTop + 115;
+      if (page === 'policy' && window.innerWidth < 960) {
+        offset = target.offsetTop + 50;
+      }
+
       const head = headerHeight;
       let ofF = offset;
 
@@ -124,12 +121,11 @@ function isInViewport(element) {
 
 // Кастомная функция для ускоренного горизонтального скролла с центровкой
 function smoothHorizontalScroll(element, duration) {
-  const container = document.querySelector('.policy__sidebar'); // Укажите ваш контейнер
+  const container = document.querySelector('.policy__sidebar');
   const containerWidth = container.offsetWidth;
   const elementLeft = element.offsetLeft;
   const elementWidth = element.offsetWidth;
 
-  // Вычисляем позицию, чтобы элемент оказался в центре
   const targetScrollPosition =
     elementLeft - (containerWidth / 2 - elementWidth / 2);
 
