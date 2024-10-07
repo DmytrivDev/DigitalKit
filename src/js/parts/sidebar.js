@@ -8,11 +8,6 @@ if (policySidebar) {
   tabsSidebar('policy');
 }
 
-function isInViewport(element) {
-  const rect = element.getBoundingClientRect();
-  return rect.top >= 0;
-}
-
 function tabsSidebar(page) {
   let titles = document.querySelectorAll(`.${page}__content .embedContent h2`);
 
@@ -71,9 +66,16 @@ function tabsSidebar(page) {
       links.forEach(link => link.classList.remove('active'));
       activeLink.classList.add('active');
 
-      if (page === 'policy' && isInViewport(activeLink)) {
-        smoothHorizontalScroll(activeLink, 100); // Центрируем активный элемент
+      if (page === 'policy') {
+        smoothHorizontalScroll(activeLink, 10); // Центрируем активный элемент
       }
+      // if (page === 'policy' && isInViewport(activeLink)) {
+      //   activeLink.scrollIntoView({
+      //     behavior: 'smooth',
+      //     block: 'nearest',
+      //     inline: 'center',
+      //   });
+      // }
     };
 
     setActiveLink();
@@ -115,6 +117,11 @@ function tabsSidebar(page) {
   });
 }
 
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return rect.top >= 0;
+}
+
 // Кастомная функция для ускоренного горизонтального скролла с центровкой
 function smoothHorizontalScroll(element, duration) {
   const container = document.querySelector('.policy__sidebar'); // Укажите ваш контейнер
@@ -129,7 +136,7 @@ function smoothHorizontalScroll(element, duration) {
   let start = container.scrollLeft;
   let change = targetScrollPosition - start;
   let currentTime = 0;
-  const increment = 20; // Ускорение (чем меньше, тем быстрее)
+  const increment = 1; // Ускорение (чем меньше, тем быстрее)
 
   function animateScroll() {
     currentTime += increment;

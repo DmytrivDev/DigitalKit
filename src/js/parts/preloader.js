@@ -18,20 +18,38 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 const messages = document.querySelectorAll('.error__mess .mess');
+let mouseStopTimeout;
 
 if (messages) {
   document.addEventListener('mousemove', event => {
-    const centerX = window.innerWidth / 2;
-    const centerY = window.innerHeight / 2;
+    const currentMousePosition = { x: event.clientX, y: event.clientY };
 
-    messages.forEach((message, index) => {
-      const offsetX = (event.clientX - centerX) / 40;
-      const offsetY = (event.clientY - centerY) / 40;
+    // Если мышка двигается, сбрасываем таймер
+    if (mouseStopTimeout) {
+      clearTimeout(mouseStopTimeout);
+    }
 
-      const animationDuration = Math.random() * 2 + 1; // Время от 1 до 3 секунд
+    // Устанавливаем новый таймер на 100ms после остановки мышки
+    mouseStopTimeout = setTimeout(() => {
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
 
-      message.style.transition = `transform ${animationDuration}s ease-out`;
-      message.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
-    });
+      messages.forEach((message, index) => {
+        // Рандомно определяем положительное или отрицательное значение
+        const offsetXDirection = Math.random() < 0.5 ? 1 : -1;
+        const offsetYDirection = Math.random() < 0.5 ? 1 : -1;
+
+        // Определяем смещение с учетом направления
+        const offsetX =
+          ((currentMousePosition.x - centerX) / 40) * offsetXDirection + 10;
+        const offsetY =
+          ((currentMousePosition.y - centerY) / 40) * offsetYDirection + 10;
+
+        const animationDuration = Math.random() * 2 + 1; // Время от 1 до 3 секунд
+
+        // message.style.transition = `transform ${animationDuration}s ease-out`;
+        message.style.transform = `translate(${offsetX}px, ${offsetY}px)`;
+      });
+    }, 100); // Задержка перед запуском анимации после остановки мышки
   });
 }
