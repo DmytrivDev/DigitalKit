@@ -8,6 +8,11 @@ if (policySidebar) {
   tabsSidebar('policy');
 }
 
+function isInViewport(element) {
+  const rect = element.getBoundingClientRect();
+  return rect.top >= 0;
+}
+
 function tabsSidebar(page) {
   let titles = document.querySelectorAll(`.${page}__content .embedContent h2`);
 
@@ -66,7 +71,7 @@ function tabsSidebar(page) {
       links.forEach(link => link.classList.remove('active'));
       activeLink.classList.add('active');
 
-      if (page === 'policy') {
+      if (page === 'policy' && isInViewport(activeLink)) {
         activeLink.scrollIntoView({
           behavior: 'smooth',
           block: 'nearest',
