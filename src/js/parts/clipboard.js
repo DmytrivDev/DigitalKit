@@ -1,31 +1,37 @@
 const copyBtns = document.querySelectorAll('.clipboard');
 
 copyBtns?.forEach(btn => {
-  // Створюємо властивість для зберігання таймера в кожному елементі
-  btn.timer = null;
-
   btn.addEventListener('click', () => {
     const idCopy = btn.dataset.id;
 
     if (idCopy) {
       const link = document.getElementById(idCopy);
+      const contactBox = btn.closest('.contact__cont');
+
       if (link) {
-        const linkText = link.textContent;
+        const linkText = link.textContent.trim();
+        const clipboardText = link.dataset.clipboard;
 
         navigator.clipboard
           .writeText(linkText)
           .then(() => {
-            btn.classList.add('isCopy');
-
-            // Перезапускаємо таймер, якщо є попередній
-            if (btn.timer) {
-              clearTimeout(btn.timer);
+            if (!contactBox.timer) {
+              contactBox.timer = null;
             }
 
-            // Таймер на 1 секунди для зняття класу
-            btn.timer = setTimeout(() => {
-              btn.classList.remove('isCopy');
-              btn.timer = null;
+            contactBox.classList.add('isCopy');
+
+            if (contactBox.timer) {
+              clearTimeout(contactBox.timer);
+            }
+
+            link.textContent = clipboardText;
+
+            contactBox.timer = setTimeout(() => {
+              contactBox.classList.remove('isCopy');
+              contactBox.timer = null;
+
+              link.textContent = linkText;
             }, 1000);
           })
           .catch(err => {
