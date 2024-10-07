@@ -67,7 +67,7 @@ function tabsSidebar(page) {
       activeLink.classList.add('active');
 
       if (page === 'policy') {
-        smoothHorizontalScroll(activeLink, 100);
+        smoothHorizontalScroll(activeLink, 1);
       }
     };
 
