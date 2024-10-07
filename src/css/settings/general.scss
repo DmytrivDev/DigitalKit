@@ -121,6 +121,12 @@ h3 {
   line-height: 2rem;
 }
 
+.whiteHeader {
+  .header {
+    background-color: var(--cw2);
+  }
+}
+
 .section__title {
   padding: 1.5rem 0;
   gap: 1.5rem;
@@ -279,10 +285,14 @@ h3 {
 
 @keyframes blink {
   50% {
-    transform: rotateX(85deg); /* Початкова та кінцева позиція - не повернуте око */
+    transform: rotateX(
+      85deg
+    ); /* Початкова та кінцева позиція - не повернуте око */
   }
   100% {
-    transform: rotateX(0deg); /* Поворот ока на 90 градусів для симуляції кліпання */
+    transform: rotateX(
+      0deg
+    ); /* Поворот ока на 90 градусів для симуляції кліпання */
   }
 }
 
