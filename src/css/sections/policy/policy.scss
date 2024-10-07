@@ -106,6 +106,9 @@
       grid-template-columns: 1fr;
     }
     &__sidebar {
+      background-color: var(--cw2);
+      top: 7.8125rem;
+      position: sticky;
       margin: 0 -1rem;
       padding: 1.5rem 1rem;
       overflow-x: auto;
@@ -125,22 +128,9 @@
       flex-direction: row;
       flex-wrap: nowrap;
       gap: 1rem;
-      li {
-        overflow: visible;
-      }
       a {
         text-wrap: nowrap;
         white-space: nowrap;
-        transform: translateX(0);
-        &::before {
-          display: none;
-        }
-        &.active {
-          margin-left: 0;
-        }
-        &:hover {
-          color: var(--ctf);
-        }
       }
     }
 

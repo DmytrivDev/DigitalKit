@@ -16,6 +16,7 @@ import { superSec } from './parts/super';
 import './parts/clipboard';
 import './parts/preloader';
 import './parts/sidebar';
+import './parts/policy';
 
 header();
 main();

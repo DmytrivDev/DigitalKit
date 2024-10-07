@@ -34,7 +34,7 @@ function tabsSidebar(page) {
     } else {
       link.textContent = title.textContent;
     }
-    
+
     listItem.appendChild(link);
     quickBodyList.appendChild(listItem);
 
@@ -65,6 +65,14 @@ function tabsSidebar(page) {
 
       links.forEach(link => link.classList.remove('active'));
       activeLink.classList.add('active');
+
+      if (page === 'policy') {
+        activeLink.scrollIntoView({
+          behavior: 'smooth',
+          block: 'nearest',
+          inline: 'center',
+        });
+      }
     };
 
     setActiveLink();
