@@ -1,22 +1,3 @@
-document.addEventListener('DOMContentLoaded', () => {
-  const spans = document.querySelectorAll('.error__preloader span');
-  const totalAnimationDuration = 3.5;
-
-  if (spans) {
-    function startAnimation() {
-      spans?.forEach(span => {
-        span.style.animation = 'none'; // Удаляем анимацию
-        void span.offsetWidth; // Принудительно перерисовываем элемент
-        span.style.animation = ''; // Возвращаем анимацию
-      });
-    }
-
-    startAnimation();
-
-    setInterval(startAnimation, totalAnimationDuration * 1000);
-  }
-});
-
 const messages = document.querySelectorAll('.error__mess .mess');
 
 if (messages) {

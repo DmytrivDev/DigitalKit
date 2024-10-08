@@ -14,7 +14,7 @@ import { reviews } from './parts/reviews';
 import { allservices } from './parts/allservices';
 import { superSec } from './parts/super';
 import './parts/clipboard';
-import './parts/preloader';
+import './parts/mousemove';
 import './parts/sidebar';
 
 header();
