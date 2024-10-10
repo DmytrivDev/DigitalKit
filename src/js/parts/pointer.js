@@ -34,11 +34,15 @@ const moveCursor = (e, coursor) => {
 };
 
 function alcasesFunc(target) {
-  const img = target.dataset.img
-    ? target.dataset.img
-    : 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mP8z/CfCQAGBgICjIkPvgAAAABJRU5ErkJggg==';
+  const img = target.dataset.img;
   const mainCont = target.closest('.allcases__cont');
   const allCont = mainCont.querySelector('.allcases__window');
+
+  if(img) {
+    allCont.classList.remove('hide');
+  } else {
+    allCont.classList.add('hide');
+  }
 
   if (allCont) {
     const imgPl = allCont.querySelector('img');

@@ -347,7 +347,11 @@ h3 {
         }
       }
 
-      &:not(.dosabled) {
+      &.disabled {
+        cursor: inherit;
+      }
+
+      &:not(.disabled) {
         &:hover {
           background-color: var(--cgl);
 

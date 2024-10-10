@@ -13,6 +13,7 @@ import { talent } from './parts/talent';
 import { reviews } from './parts/reviews';
 import { allservices } from './parts/allservices';
 import { superSec } from './parts/super';
+import './parts/pagination';
 import './parts/clipboard';
 import './parts/mousemove';
 import './parts/sidebar';
