@@ -122,6 +122,7 @@ document.addEventListener('DOMContentLoaded', function () {
 function changeItemsByPage(currentPage, previousPage) {
   // Якщо попередня сторінка менша, додаємо клас по порядку
   const pag = document.querySelector('.pagination');
+  const cont = document.querySelector('.allcases__cont');
 
   if (previousPage < currentPage) {
     const items = document.querySelectorAll(
@@ -129,6 +130,7 @@ function changeItemsByPage(currentPage, previousPage) {
     );
 
     pag.classList.add('running');
+    cont.classList.add('running');
     items.forEach((item, index) => {
       item.classList.add('pre-current');
       setTimeout(() => {
@@ -141,6 +143,7 @@ function changeItemsByPage(currentPage, previousPage) {
 
     setTimeout(() => {
       pag.classList.remove('running');
+      cont.classList.remove('running');
     }, 1250);
   }
 
@@ -151,12 +154,14 @@ function changeItemsByPage(currentPage, previousPage) {
     );
 
     pag.classList.add('running');
+    cont.classList.add('running');
     items.forEach((item, index) => {
       item.classList.remove('current');
     });
 
     setTimeout(() => {
         pag.classList.remove('running');
+        cont.classList.remove('running');
       }, 750);
   }
 }

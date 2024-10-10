@@ -108,6 +108,22 @@
             visibility: visible;
         }
     }
+
+    &.running {
+        .allcases__item {
+            &:hover {
+                .allcases__link {
+                    box-shadow: none !important;
+                    background-color: var(--cw2) !important;
+                    z-index: inherit;
+                }
+            }
+        }
+
+        .allcases__window, .coursor {
+            opacity: 0 !important;
+        }
+    }
 }
 
 .allcases__list {
@@ -126,7 +142,9 @@
     height: 5rem;
     width: 83rem;
     border-top: 1px solid var(--cgd);
-    transition: .75s left, .75s opacity;
+    transition:
+        0.75s left,
+        0.75s opacity;
     position: absolute;
     right: 0;
     top: 0;
@@ -174,7 +192,7 @@
     }
 
     &.current {
-        transition: .5s !important;
+        transition: 0.5s !important;
         left: 0 !important;
         opacity: 1;
     }
