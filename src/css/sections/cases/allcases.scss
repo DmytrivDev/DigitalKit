@@ -136,6 +136,10 @@
     .coursor {
         z-index: 8;
     }
+
+    &.noAnim .allcases__item {
+        transition: 0s !important;
+    }
 }
 
 .allcases__item {
@@ -199,6 +203,12 @@
         transition: 0.5s !important;
         left: 0 !important;
         opacity: 1;
+    }
+
+     &.filtering {
+        transition:
+        0.75s top,
+        0.75s opacity !important;
     }
 
     &.empty {

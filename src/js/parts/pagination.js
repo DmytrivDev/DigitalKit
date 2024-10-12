@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
       '.allcases__item.filtered'
     ).length;
     const totalPages = Math.ceil(totalCount / perPage);
+    const list = document.querySelector('.allcases__list');
 
     const currentPage = Math.max(1, Math.min(page, totalPages)); // Обмежуємо між 1 і totalPages
     const previousPage = parseInt(inner.getAttribute('data-current'));
@@ -60,6 +61,10 @@ document.addEventListener('DOMContentLoaded', function () {
     inner.style.transform = `translateY(${offset + direction * -0.5}rem)`; // Піднімаємо трохи вище
 
     // Після короткої затримки плавно опускаємо на нову позицію
+    setTimeout(() => {
+      list.classList.remove('noAnim');
+    }, 200);    
+    
     setTimeout(() => {
       inner.style.transform = `translateY(${offset}rem)`; // Остаточне положення сторінки
     }, 500);
@@ -122,10 +127,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   const buttons = document.querySelectorAll('.allcases__ctrls button');
   const items = document.querySelectorAll('.allcases__item');
+  const list = document.querySelector('.allcases__list');
+  const perPageNum = list.dataset.pages;
 
   buttons.forEach(button => {
     button.addEventListener('click', function () {
       const selectedId = this.getAttribute('data-id');
+      let index = 0;
+      let mustEmpty = true;
 
       // 1. Додаємо клас active до натиснутої кнопки та видаляємо з інших
       buttons.forEach(btn => btn.classList.remove('active'));
@@ -138,11 +147,29 @@ document.addEventListener('DOMContentLoaded', function () {
           .split(',')
           .map(id => id.trim());
 
+        item.classList.add('filtering');
+
         if (dataIds.includes(selectedId)) {
-          item.classList.add('filtered');
+          index++;
+          const indexCheck = index % perPageNum;
+          const isEmpty = item.classList.contains('empty');
+
+          if (!isEmpty || mustEmpty) {
+            item.classList.add('filtered');
+          } else {
+            item.classList.remove('filtered');
+          }
+
+          if (isEmpty && indexCheck === 0) {
+            mustEmpty = false;
+          }
         } else {
           item.classList.remove('filtered');
         }
+
+        setTimeout(() => {
+          item.classList.remove('filtering');
+        }, 1250);
       });
 
       document.querySelectorAll('.allcases__item')?.forEach(el => {
