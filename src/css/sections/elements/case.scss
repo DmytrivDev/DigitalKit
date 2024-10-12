@@ -100,6 +100,9 @@
 @media screen and (max-width: 960px) {
     .case__item {
         gap: 0.5rem;
+        .coursor {
+            display: none !important;
+        }
     }
     .case__info {
         min-height: 22rem;
