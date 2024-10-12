@@ -1,18 +1,14 @@
 document.addEventListener('DOMContentLoaded', function () {
   const pagination = document.querySelector('.pagination');
   const perPage = parseInt(pagination.getAttribute('data-perpage'));
-  const totalCount = parseInt(pagination.getAttribute('data-count'));
-  const totalPages = Math.ceil(totalCount / perPage);
   const inner = pagination.querySelector('.inner');
   const totalPagesSpan = pagination.querySelector('.total-pages');
   const prevBtn = pagination.querySelector('.prev');
   const nextBtn = pagination.querySelector('.next');
 
-  // Оновлюємо загальну кількість сторінок у HTML
-  totalPagesSpan.textContent = totalPages;
-
   // Генеруємо HTML для сторінок
-  function renderPages(currentPage) {
+  function renderPages(currentPage, totalPages) {
+    totalPagesSpan.textContent = totalPages;
     inner.innerHTML = ''; // Очищаємо попередні елементи
     for (let i = 1; i <= totalPages; i++) {
       const pageSpan = document.createElement('span');
@@ -25,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   // Оновлюємо стан кнопок prev/next
-  function updateButtons(currentPage) {
+  function updateButtons(currentPage, totalPages) {
     if (currentPage === 1) {
       prevBtn.classList.add('disabled');
     } else {
@@ -41,13 +37,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Перемикаємо сторінки з анімацією
   function setCurrentPage(page) {
+    const totalCount = document.querySelectorAll(
+      '.allcases__item.filtered'
+    ).length;
+    const totalPages = Math.ceil(totalCount / perPage);
+
     const currentPage = Math.max(1, Math.min(page, totalPages)); // Обмежуємо між 1 і totalPages
     const previousPage = parseInt(inner.getAttribute('data-current'));
+
     inner.setAttribute('data-current', currentPage);
 
     // Оновлюємо сторінки
-    renderPages(currentPage);
-    updateButtons(currentPage);
+    renderPages(currentPage, totalPages);
+    updateButtons(currentPage, totalPages);
 
     // Визначаємо напрямок анімації (вперед чи назад)
     const direction = currentPage > previousPage ? 1 : -1; // 1 - вперед, -1 - назад
@@ -91,7 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
   function distributeItems() {
     const list = document.querySelector('.allcases__list');
     const pages = parseInt(list.getAttribute('data-pages'));
-    const items = document.querySelectorAll('.allcases__item');
+    const items = document.querySelectorAll('.allcases__item.filtered');
     const perPage = parseInt(pagination.getAttribute('data-perpage'));
     let page = 1;
     let numOnPage = 1;
@@ -117,6 +119,40 @@ document.addEventListener('DOMContentLoaded', function () {
   // Ініціалізація першої сторінки
   setCurrentPage(1);
   distributeItems();
+
+  const buttons = document.querySelectorAll('.allcases__ctrls button');
+  const items = document.querySelectorAll('.allcases__item');
+
+  buttons.forEach(button => {
+    button.addEventListener('click', function () {
+      const selectedId = this.getAttribute('data-id');
+
+      // 1. Додаємо клас active до натиснутої кнопки та видаляємо з інших
+      buttons.forEach(btn => btn.classList.remove('active'));
+      this.classList.add('active');
+
+      // 2. Додаємо клас filtered до елементів allcases__item з відповідним data-ids
+      items.forEach(item => {
+        const dataIds = item
+          .getAttribute('data-ids')
+          .split(',')
+          .map(id => id.trim());
+
+        if (dataIds.includes(selectedId)) {
+          item.classList.add('filtered');
+        } else {
+          item.classList.remove('filtered');
+        }
+      });
+
+      document.querySelectorAll('.allcases__item')?.forEach(el => {
+        el.classList.remove('current');
+      });
+
+      setCurrentPage(1);
+      distributeItems();
+    });
+  });
 });
 
 function changeItemsByPage(currentPage, previousPage) {
@@ -126,7 +162,7 @@ function changeItemsByPage(currentPage, previousPage) {
 
   if (previousPage < currentPage) {
     const items = document.querySelectorAll(
-      `.allcases__item[data-page="${currentPage}"]`
+      `.allcases__item.filtered[data-page="${currentPage}"]`
     );
 
     pag.classList.add('running');
@@ -150,7 +186,7 @@ function changeItemsByPage(currentPage, previousPage) {
   // Якщо попередня сторінка більша, видаляємо клас в зворотньому порядку
   if (previousPage > currentPage) {
     const items = document.querySelectorAll(
-      `.allcases__item[data-page="${previousPage}"]`
+      `.allcases__item.filtered[data-page="${previousPage}"]`
     );
 
     pag.classList.add('running');
@@ -160,8 +196,8 @@ function changeItemsByPage(currentPage, previousPage) {
     });
 
     setTimeout(() => {
-        pag.classList.remove('running');
-        cont.classList.remove('running');
-      }, 750);
+      pag.classList.remove('running');
+      cont.classList.remove('running');
+    }, 750);
   }
 }
