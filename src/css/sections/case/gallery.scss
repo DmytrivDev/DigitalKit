@@ -15,6 +15,10 @@
     position: relative;
     width: 100%;
 
+    &.video {
+        padding-top: calc(100% / 16 * 9);
+    }
+
     img {
         width: 100%;
         height: auto;

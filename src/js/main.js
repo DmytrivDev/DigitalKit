@@ -15,6 +15,7 @@ import { allservices } from './parts/allservices';
 import { superSec } from './parts/super';
 import './parts/pagination';
 import { allcases } from './parts/allcases';
+import './parts/case';
 import './parts/clipboard';
 import './parts/mousemove';
 import './parts/sidebar';

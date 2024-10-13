@@ -1,5 +1,5 @@
 .contact {
-  padding: 9.5rem 0 7.125rem 0 !important;
+  padding: 9.5rem 0 7.125rem 0;
 
   &__body {
     display: flex;
@@ -199,7 +199,7 @@
 
 @media screen and (max-width: 960px) {
   .contact {
-    padding: 9.75rem 0 5.5rem 0;
+    padding: 8rem 0 5.5rem 0;
 
     &__body {
       flex-direction: column;

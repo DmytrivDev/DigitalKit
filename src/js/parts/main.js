@@ -77,7 +77,7 @@ export const main = () => {
     });
   }
 
-  document.querySelectorAll('.service__arrow')?.forEach(function (arrow) {
+  document.querySelectorAll('.arrowToBottom')?.forEach(function (arrow) {
     arrow.addEventListener('click', function () {
       const currentSection = this.closest('section');
 
