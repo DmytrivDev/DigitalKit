@@ -184,7 +184,7 @@ body {
                     opacity: 1 !important;
                     margin: 0;
                     background-color: var(--cgd);
-                    transform: 0.1s;
+                    transition: 0.3s;
 
                     &.is-active {
                         background-color: var(--ct);
