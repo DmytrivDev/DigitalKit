@@ -1,5 +1,7 @@
 import Accordion from 'accordion-js';
 
+const accordeonCont = document.querySelector('.section__accordeon');
+
 export const galCar = () => {
   const accordeon = document.querySelectorAll('.accordeonStart');
 
@@ -19,4 +21,21 @@ export const galCar = () => {
       $index++;
     });
   }
+
+  if (accordeonCont) {
+    checkAccordeonVisibility();
+    window.addEventListener('scroll', checkAccordeonVisibility);
+    window.addEventListener('resize', checkAccordeonVisibility);
+  }
 };
+
+function checkAccordeonVisibility() {
+  const rect = accordeonCont.getBoundingClientRect();
+  const windowHeight = window.innerHeight;
+
+  if (rect.top < windowHeight - windowHeight / 4) {
+    accordeonCont.classList.add('done'); // Додаємо клас якщо елемент видно
+  } else {
+    accordeonCont.classList.remove('done'); // Прибираємо клас якщо елемент виходить з екрану
+  }
+}

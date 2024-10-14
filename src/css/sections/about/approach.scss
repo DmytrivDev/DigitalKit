@@ -9,9 +9,21 @@
     padding-bottom: 2.5rem;
     border-radius: 1rem;
     background-color: var(--cw);
+    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.04);
+    transition: .3s;
 
     * {
         color: var(--ct) !important;
+    }
+
+    &.app2 {
+        .approach__tags {
+            li {
+                &::before {
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M6.65674 17.3516L17.3516 6.65669' stroke='%23CDCDCD' stroke-width='2.5'/%3E%3Cpath d='M6.80518 6.80469L17.5 17.4996' stroke='%23CDCDCD' stroke-width='2.5'/%3E%3C/svg%3E");
+                }
+            }
+        }
     }
 }
 
@@ -40,11 +52,13 @@
     top: -0.63rem;
     height: 5.75rem;
     position: relative;
+    transition: .3s;
 
     img {
         height: 100%;
         width: auto;
         display: block;
+        transition: .3s;
     }
 }
 
@@ -66,8 +80,60 @@
         line-height: 1.5rem;
         border: 1px solid var(--cgl);
         font-weight: 600;
+        transition: .3s;
+        position: relative;
+
+        &::before {
+            left: 1.25rem;
+            width: 1.5rem;
+            height: 1.5rem;
+            top: 50%;
+            transform: translateY(-50%);
+            content: "";
+            position: absolute;
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: contain;
+            opacity: 0;
+            transition: .3s;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M4.34326 12.1572L10.0001 17.8141L15.657 12.1572L20.2501 7.56408' stroke='%23FF5941' stroke-width='2.5'/%3E%3C/svg%3E");
+        }
     }
 }
+
+@media screen and (min-width: 961px) {
+    .approach__item {
+        &:hover {
+            box-shadow: 0px 1.625rem 1.625rem 0px rgba(0, 0, 0, 0.04);
+
+            &.app1 {
+                .approach__hand {
+                    transform: translateY(-.75rem);
+                }
+            }
+            
+            &.app2 {
+                .approach__hand {
+                    transform: translateY(.75rem);
+                }
+            }
+
+            .approach__hand {
+                filter: brightness(0) saturate(100%) invert(38%) sepia(100%) saturate(732%) hue-rotate(329deg) brightness(102%) contrast(100%);
+            }
+
+            .approach__tags {
+                li {
+                    padding-left: 3.25rem;
+                    &::before {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}
+
 
 @media screen and (max-width: 960px) {
     .approach__item {
