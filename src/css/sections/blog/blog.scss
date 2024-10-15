@@ -42,24 +42,69 @@
   gap: 1rem;
 }
 .facetwp-radio {
-  cursor: pointer;
   padding: 0.5rem 1.5rem;
-  border-radius: 16rem;
-  border: 0.0625rem solid var(--ct);
-  backdrop-filter: blur(0.75rem);
-  text-align: center;
-
   font-size: 0.875rem;
+  line-height: 1.5rem;
   font-weight: 600;
-  line-height: 1.71;
-  transition: all 0.15s ease-in;
+  white-space: nowrap;
+  color: var(--ct);
+  background-color: transparent;
+  position: relative;
+  overflow: hidden;
+  transition: 0.3s;
+  cursor: pointer;
+
   &.checked {
-    background-color: var(--ct);
+    padding-right: 2.75rem;
     color: var(--cw);
+
+    &::before {
+      background-color: var(--ct) !important;
+      border-color: var(--ct) !important;
+      left: 0 !important;
+      right: 0 !important;
+      bottom: 0 !important;
+      top: 0 !important;
+    }
+
+    span {
+      &::after {
+        opacity: 1;
+      }
+    }
   }
-  &:hover {
-    background-color: var(--ct);
-    color: var(--cw);
+
+  span {
+    position: relative;
+    z-index: 2;
+
+    &::after {
+      right: -1.25rem;
+      width: 1rem;
+      height: 1rem;
+      opacity: 0;
+      background-repeat: no-repeat;
+      background-size: contain;
+      content: "";
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: 0.3s;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 16 16' fill='none'%3E%3Cpath d='M4.22852 4.22852L11.771 11.771' stroke='%23FEFEFE' stroke-width='2'/%3E%3Cpath d='M4.22852 11.7715L11.771 4.22901' stroke='%23FEFEFE' stroke-width='2'/%3E%3C/svg%3E");
+    }
+  }
+
+  &::before {
+    border-radius: 2rem;
+    border: 1px solid var(--ct);
+    transition: 0.3s;
+    background-color: transparent;
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
   }
 }
 .facetwp-counter {
@@ -106,6 +151,7 @@
   }
   &__date {
     color: var(--ctf2);
+    font-weight: 500;
   }
 
   &__name {
@@ -145,6 +191,21 @@
     &:hover {
       &::after {
         transform: rotate(45deg);
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 961px) {
+  .facetwp-radio {
+    &:hover {
+      &::before {
+        left: 2px;
+        right: 2px;
+        top: 1px;
+        bottom: 1px;
+        border-color: transparent;
+        background-color: var(--cgl);
       }
     }
   }
@@ -203,10 +264,6 @@
 
     &.facetwp-all {
       min-width: auto;
-    }
-    &:hover {
-      background-color: transparent;
-      color: var(--ct);
     }
   }
 

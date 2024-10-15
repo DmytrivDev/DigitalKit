@@ -5,6 +5,7 @@ export const articles = () => {
   const related = document.querySelector('.articles__carousell');
   if (related) {
     const options = {
+      type: 'loop',
       isNavigation: true,
       perPage: 3,
       perMove: 1,

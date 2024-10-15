@@ -16,6 +16,7 @@ import { superSec } from './parts/super';
 import './parts/pagination';
 import { allcases } from './parts/allcases';
 import './parts/case';
+import './parts/article';
 import './parts/clipboard';
 import './parts/mousemove';
 import './parts/sidebar';

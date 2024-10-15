@@ -1,3 +1,10 @@
+.about__case {
+    h1 {
+        font-size: 6rem;
+        line-height: 6.5rem;
+    }
+}
+
 .about__image {
     border-radius: 1rem;
     margin-top: 4rem;
@@ -7,6 +14,12 @@
 }
 
 @media screen and (max-width: 960px) {
+    .about__case {
+        h1 {
+            font-size: 3.5rem;
+            line-height: 4rem;
+        }
+    }
     .about__image {
         border-radius: .75rem;
         margin-top: 2rem;

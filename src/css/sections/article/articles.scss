@@ -20,6 +20,9 @@
   }
 
   &__carousell {
+    .splide__slide  {
+      border: none !important;
+    }
   }
 
   &__box {

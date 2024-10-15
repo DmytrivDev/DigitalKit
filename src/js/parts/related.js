@@ -5,6 +5,7 @@ export const related = () => {
   const related = document.querySelector('.related__carousell');
   if (related) {
     const options = {
+      type: 'loop',
       isNavigation: true,
       perPage: 2,
       perMove: 1,
@@ -14,7 +15,7 @@ export const related = () => {
         640: {
           perPage: 1,
         },
-      }
+      },
     };
 
     new Splide(related, options).mount();

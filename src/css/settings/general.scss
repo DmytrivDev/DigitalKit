@@ -255,6 +255,7 @@ h3 {
       opacity: 1 !important;
       background-color: transparent;
       transform: none;
+      transition: .3s;
 
       &:hover {
         background-color: var(--cgl);
