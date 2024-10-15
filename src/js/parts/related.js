@@ -6,7 +6,6 @@ export const related = () => {
   if (related) {
     const options = {
       type: 'loop',
-      isNavigation: true,
       perPage: 2,
       perMove: 1,
       pagination: false,

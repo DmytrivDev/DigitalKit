@@ -6,9 +6,9 @@ export const articles = () => {
   if (related) {
     const options = {
       type: 'loop',
-      isNavigation: true,
       perPage: 3,
       perMove: 1,
+      cloneStatus: false,
       pagination: false,
       gap: '1rem',
       breakpoints: {

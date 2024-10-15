@@ -13,6 +13,7 @@ export const reviews = () => {
       rewindSpeed: 600,
       focus: 0,
       updateOnMove: true,
+      omitEnd: true,
       breakpoints: {
         960: {
           perPage: 1,
