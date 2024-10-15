@@ -164,6 +164,98 @@ body:not(.overHideMob).red {
     display: none;
 }
 
+.openNavDesc {
+    display: none;
+}
+
+@media screen and (min-width: 961px) {
+    body:not(.homePage) {
+        .header__nav {
+            transition: 0.6s;
+            width: 30.5rem;
+            overflow: hidden;
+            backdrop-filter: unset !important;
+            background-color: var(--cgl) !important;
+            position: relative;
+            ul {
+                transition: 0.6s;
+                li {
+                    min-width: 6rem;
+                    transition: 0.6s;
+                    &.current-menu-item {
+                        opacity: 1 !important;
+                        a {
+                            position: absolute;
+                            transition: 0.6s;
+                        }
+                    }
+                    &:nth-child(1) {
+                        a {
+                            right: calc(6rem * 4 + 0.25rem);
+                        }
+                    }
+                    &:nth-child(2) {
+                        a {
+                            right: calc(6rem * 3 + 0.25rem);
+                        }
+                    }
+                    &:nth-child(3) {
+                        a {
+                            right: calc(6rem * 2 + 0.25rem);
+                        }
+                    }
+                    &:nth-child(4) {
+                        a {
+                            right: calc(6rem + 0.25rem);
+                        }
+                    }
+                    &:nth-child(5) {
+                        a {
+                            right: 0.25rem;
+                        }
+                    }
+                }
+            }
+        }
+        .openNavDesc {
+            width: 5rem;
+            background-size: 1.5rem;
+            display: block;
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            background-position: 1rem center;
+            background-repeat: no-repeat;
+            opacity: 0;
+            transition: .6s;
+            transform: translateX(-50%);
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M3 18V16H21V18H3ZM3 13V11H21V13H3ZM3 8V6H21V8H3Z' fill='%23191919'/%3E%3C/svg%3E");
+        }
+        .header.changed:not(.openedNavAll) {
+            .header__nav {
+                width: 9.25rem;
+                height: 3.5rem;
+                .openNavDesc {
+                    opacity: 1;
+                    transform: translateX(0);
+                }
+                ul {
+                    margin-left: 2.75rem;
+                    li {
+                        opacity: 0.2;
+                        &.current-menu-item {
+                            a {
+                                right: 0.25rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 960px) {
     .header__content {
         padding-top: 1.5rem;
