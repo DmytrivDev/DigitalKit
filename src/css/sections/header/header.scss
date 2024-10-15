@@ -228,7 +228,7 @@ body:not(.overHideMob).red {
             background-position: 1rem center;
             background-repeat: no-repeat;
             opacity: 0;
-            transition: .6s;
+            transition: 0.6s;
             transform: translateX(-50%);
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24' fill='none'%3E%3Cpath d='M3 18V16H21V18H3ZM3 13V11H21V13H3ZM3 8V6H21V8H3Z' fill='%23191919'/%3E%3C/svg%3E");
         }
@@ -273,39 +273,57 @@ body:not(.overHideMob).red {
             display: block;
             z-index: 0;
         }
-        &::before, &::after {
+        &::before,
+        &::after {
             content: "";
             position: absolute;
             top: -1rem;
             bottom: -1rem;
-            width: 110%;
+            width: 100%;
             left: 0;
             border-radius: 3rem;
             z-index: 1;
             display: block;
-            transform: translateX(-100%)
+            transform: translateX(-100%);
         }
         &::before {
             background-color: var(--cb);
         }
         &::after {
             background-color: var(--co);
+            transform: translateX(-140%);
+            border-radius: 40%;
         }
         &:hover {
             &::before {
-                animation: bgAn .4s forwards;
+                animation: bgAn1 0.45s forwards linear;
             }
             &::after {
-                animation: bgAn .4s .15s forwards;
+                animation: bgAn2 0.45s forwards linear;
             }
         }
     }
 }
 
-@keyframes bgAn {
-    from {transform: translateX(-110%);}
-    to {transform: translateX(-5%);}
-  }
+@keyframes bgAn1 {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(40%);
+    }
+}
+
+@keyframes bgAn2 {
+    from {
+        transform: translateX(-140%);
+        border-radius: 40%;
+    }
+    to {
+        transform: translateX(0);
+        border-radius: 60%;
+    }
+}
 
 @media screen and (max-width: 960px) {
     .header__content {
