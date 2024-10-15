@@ -20,15 +20,16 @@ function caseChecker() {
   // Обчислюємо прогрес скролу: 0 коли верх секції торкається верхнього краю екрану,
   // і 1 коли низ секції торкається нижнього краю екрану
   const progress = Math.min(
-    Math.max((windowHeight - sectionRect.top) / sectionRect.height, 0),
-    1
+    Math.max((windowHeight - sectionRect.top) / sectionRect.height, 0)
   );
   const progressParc = progress * 100;
+
+  console.log(progress)
 
   // Кількість букв для замальовування
   const lettersToPaint = Math.floor(progress * spans.length);
 
-  if (progressParc >= 100) {
+  if (progressParc >= 80) {
     list.classList.add('doneStart');
     list.classList.add('done');
   } else {
@@ -37,7 +38,8 @@ function caseChecker() {
   }
 
   listItems.forEach((divid, index) => {
-    divid.style.width = `${progressParc}%`;
+    const dividW = progressParc * (10 - index) / 8;
+    divid.style.width = `${dividW}%`;
   });
 
   // Замальовуємо відповідну кількість букв
