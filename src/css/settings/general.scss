@@ -316,7 +316,7 @@ h3 {
       color: var(--ct) !important;
     }
 
-    & > a {
+    & > button, & > a {
       width: 3rem;
       height: 100%;
       transition: 0.3s;
