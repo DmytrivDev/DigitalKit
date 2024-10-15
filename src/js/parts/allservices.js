@@ -12,11 +12,12 @@ export const allservices = () => {
       }
     });
 
-    servicesList.addEventListener('mouseout', evt => {
+    servicesList.addEventListener('mouseleave', evt => {
+      console.log('111');
       removeShowed();
-      document.querySelectorAll('.nullTrans')?.classList.remove('.nullTrans');
-      document.querySelectorAll('.anim2')?.classList.remove('.anim2');
-      document.querySelectorAll('.anim3')?.classList.remove('.anim3');
+      document.querySelector('.nullTrans')?.classList.remove('nullTrans');
+      document.querySelector('.anim2')?.classList.remove('anim2');
+      document.querySelector('.anim3')?.classList.remove('anim3');
     });
   }
 
@@ -43,13 +44,14 @@ export const allservices = () => {
 
 function changeState(target) {
   const id = target.dataset.id;
-  const targetElement = document.querySelector('[data-id="allservices_' + id+'"]');
+  const targetElement = document.querySelector(
+    '[data-id="allservices_' + id + '"]'
+  );
   const targetElementImg = document.querySelector('#allservicesimg_' + id);
   const list = document.querySelector('.allservices__icons');
   const zeroImg = document.querySelector('#allservicesimg_0');
 
   list.classList.add('nullTrans');
-  removeShowed();
   setTimeout(() => {
     list.classList.remove('nullTrans');
     setTimeout(() => {
@@ -59,17 +61,25 @@ function changeState(target) {
     }, 10);
   }, 100);
 
-  target.addEventListener('mouseout', evt => {
+  target.addEventListener('mouseleave', evt => {
     targetElement.classList.remove('showed');
     targetElementImg.classList.remove('showed');
     zeroImg.classList.remove('anim' + id);
+    setTimeout(() => {
+      targetElement.classList.remove('showed');
+      targetElementImg.classList.remove('showed');
+      zeroImg.classList.remove('anim' + id);
+    }, 100);
   });
 }
 
 function removeShowed() {
-  document.querySelectorAll('.section__allservices .showed')?.forEach(el => {
-    el.classList.remove('.showed');
-  });
+  setTimeout(() => {
+    document.querySelectorAll('.section__allservices .showed')?.forEach(el => {
+      el.classList.remove('showed');
+    });
+    document.getElementById('allservicesimg_0')?.removeAttribute('class');
+  }, 100);
 }
 
 function checkWidth(carousell, splide) {
