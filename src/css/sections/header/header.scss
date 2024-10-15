@@ -254,7 +254,58 @@ body:not(.overHideMob).red {
             }
         }
     }
+    .header__button {
+        position: relative;
+        overflow: hidden;
+        background-color: transparent !important;
+        span {
+            position: relative;
+            z-index: 2;
+        }
+        .bgbtn {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            top: 0;
+            background-color: var(--co);
+            border-radius: 3rem;
+            display: block;
+            z-index: 0;
+        }
+        &::before, &::after {
+            content: "";
+            position: absolute;
+            top: -1rem;
+            bottom: -1rem;
+            width: 110%;
+            left: 0;
+            border-radius: 3rem;
+            z-index: 1;
+            display: block;
+            transform: translateX(-100%)
+        }
+        &::before {
+            background-color: var(--cb);
+        }
+        &::after {
+            background-color: var(--co);
+        }
+        &:hover {
+            &::before {
+                animation: bgAn .4s forwards;
+            }
+            &::after {
+                animation: bgAn .4s .15s forwards;
+            }
+        }
+    }
 }
+
+@keyframes bgAn {
+    from {transform: translateX(-110%);}
+    to {transform: translateX(-5%);}
+  }
 
 @media screen and (max-width: 960px) {
     .header__content {
