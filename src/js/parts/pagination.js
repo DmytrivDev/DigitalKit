@@ -63,7 +63,7 @@ document.addEventListener('DOMContentLoaded', function () {
       // Змінюємо translateY для плавної анімації
       const offset = -((currentPage - 1) * 3); // Відстань зміщення (3rem * індекс сторінки)
       inner.style.transition = 'transform 0.5s ease-in-out'; // Плавність анімації
-      inner.style.transform = `translateY(${offset + direction * -0.5}rem)`; // Піднімаємо трохи вище
+      inner.style.transform = `translateY(${offset + direction * -0.15}rem)`; // Піднімаємо трохи вище
 
       // Після короткої затримки плавно опускаємо на нову позицію
       setTimeout(() => {
@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }, 200);
 
       setTimeout(() => {
+        inner.style.transition = 'transform 0.3s ease-in-out'; // Плавність анімації
         inner.style.transform = `translateY(${offset}rem)`; // Остаточне положення сторінки
       }, 500);
 
@@ -83,7 +84,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const currentPage = parseInt(inner.getAttribute('data-current'));
       if (
         !e.target.classList.contains('disabled') &&
-        !pagination.classList.contains('running')
+        !pagination.classList.contains('running') && !pagination.classList.contains('stopAnim')
       ) {
         setCurrentPage(currentPage - 1);
       }
@@ -94,7 +95,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const currentPage = parseInt(inner.getAttribute('data-current'));
       if (
         !e.target.classList.contains('disabled') &&
-        !pagination.classList.contains('running')
+        !pagination.classList.contains('running') && !pagination.classList.contains('stopAnim')
       ) {
         setCurrentPage(currentPage + 1);
       }
@@ -159,6 +160,7 @@ document.addEventListener('DOMContentLoaded', function () {
             index++;
             const indexCheck = index % perPageNum;
             const isEmpty = item.classList.contains('empty');
+            pagination.classList.add('stopAnim');
 
             if (!isEmpty || mustEmpty) {
               item.classList.add('filtered');
@@ -181,6 +183,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
           setTimeout(() => {
             item.classList.remove('filtering');
+            pagination.classList.remove('stopAnim');
           }, 1250);
         });
 

@@ -301,6 +301,16 @@ h3 {
   display: flex;
   justify-content: center;
 
+  &.stopAnim {
+    * {
+      animation: none !important;
+      transition: 0s !important;
+    }
+    .inner {
+      transform: translateY(0) !important;
+    }
+  }
+
   .pagination__cont {
     width: 12.375rem;
     min-height: 3rem;
@@ -318,6 +328,7 @@ h3 {
 
     & > button, & > a {
       width: 3rem;
+      min-width: 3rem;
       height: 100%;
       transition: 0.3s;
       position: relative;
