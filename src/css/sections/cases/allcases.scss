@@ -144,6 +144,12 @@
         opacity: 1;
     }
 
+    &.noSelect {
+        .coursor {
+            display: none;
+        }
+    }
+
     &::after {
         content: "";
         position: absolute;
