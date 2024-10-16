@@ -1,0 +1,112 @@
+.preloader__cont {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    z-index: 300;
+    visibility: hidden;
+
+    img {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translateY(-50%) translateX(-50%);
+        opacity: 1;
+    }
+
+    &.start {
+        visibility: visible;
+        animation: animAll 3s forwards;
+
+        img {
+            animation: logoAnim 3s forwards;
+        }
+        .preloader__line {
+            &:nth-child(1) {
+                animation: lineAnim1 3s forwards;
+            }
+            &:nth-child(2) {
+                animation: lineAnim2 3s forwards;
+            }
+            &:nth-child(3) {
+                animation: lineAnim3 3s forwards;
+            }
+        }
+    }
+}
+
+.preloader__line {
+    height: calc(100% / 3);
+    width: 100%;
+    background-color: var(--cb);
+}
+
+@keyframes logoAnim {
+    0% {
+        opacity: 1;
+    }
+    33% {
+        opacity: 0.5;
+    }
+    66% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes lineAnim1 {
+    0% {
+        width: 100%;
+    }
+    33% {
+        width: 86%;
+    }
+    66% {
+        width: 28%;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes lineAnim2 {
+    0% {
+        width: 100%;
+    }
+    33% {
+        width: 72.2%;
+    }
+    66% {
+        width: 13.9%;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes lineAnim3 {
+    0% {
+        width: 100%;
+    }
+    33% {
+        width: 58.3%;
+    }
+    66% {
+        width: 0;
+    }
+    100% {
+        width: 0;
+    }
+}
+
+@keyframes animAll {
+    0% {
+        visibility: visible;
+    }
+    100% {
+        visibility: hidden;
+    }
+}

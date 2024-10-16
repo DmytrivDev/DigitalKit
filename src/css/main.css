@@ -5,6 +5,7 @@
 @import url('./settings/general.scss');
 
 /* Header */
+@import url('./sections/elements/preloader.scss');
 @import url('./sections/header/header.scss');
 @import url('./sections/header/navigation.scss');
 
