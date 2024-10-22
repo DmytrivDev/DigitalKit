@@ -264,7 +264,7 @@
         .tab {
             width: 100%;
             min-height: 34.5rem;
-            gap: 3rem;
+            gap: 2.25rem;
             padding: 2rem 1.5rem;
             border-radius: 0rem 0.75rem 0.75rem 0rem;
             h2 {
@@ -275,10 +275,13 @@
                 max-width: inherit;
                 font-size: 0.875rem;
                 line-height: 1.25rem;
+                br {
+                    display: none;
+                }
             }
             .tab__img {
                 position: static;
-                height: 11.55rem;
+                height: 16.155rem;
                 width: 16rem;
                 display: flex;
                 justify-content: center;
@@ -314,7 +317,7 @@
                     margin-top: 1.5rem;
                     display: none;
                     width: 16rem;
-                    height: 7.95rem !important;
+                    height: 9.95rem !important;
                     height: auto;
                     position: static;
                     justify-content: center;

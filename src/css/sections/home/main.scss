@@ -75,7 +75,8 @@
 
     p {
         font-size: 0.875rem;
-        font-weight: 1.25rem;
+        line-height: 1.25rem;
+        font-weight: 300;
         color: var(--cg);
     }
 }
@@ -155,5 +156,11 @@
 @media screen and (max-width: 640px) {
     .main__title {
         padding-right: 2rem;
+    }
+    .main__topcont {
+        .button {
+            max-width: inherit;
+            width: 100%;
+        }
     }
 }

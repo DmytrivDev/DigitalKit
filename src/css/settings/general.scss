@@ -255,7 +255,7 @@ h3 {
       opacity: 1 !important;
       background-color: transparent;
       transform: none;
-      transition: .3s;
+      transition: 0.3s;
 
       &:hover {
         background-color: var(--cgl);
@@ -286,14 +286,10 @@ h3 {
 
 @keyframes blink {
   50% {
-    transform: rotateX(
-      85deg
-    ); /* Початкова та кінцева позиція - не повернуте око */
+    transform: rotateX(85deg); /* Початкова та кінцева позиція - не повернуте око */
   }
   100% {
-    transform: rotateX(
-      0deg
-    ); /* Поворот ока на 90 градусів для симуляції кліпання */
+    transform: rotateX(0deg); /* Поворот ока на 90 градусів для симуляції кліпання */
   }
 }
 
@@ -327,7 +323,8 @@ h3 {
       color: var(--ct) !important;
     }
 
-    & > button, & > a {
+    & > button,
+    & > a {
       width: 3rem;
       min-width: 3rem;
       height: 100%;
@@ -517,13 +514,43 @@ h3 {
   }
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: 961px) {
   .section__title {
     transition: 0.3s ease-out;
     &.anim.startAnim {
       &:hover {
         padding-left: 2rem;
         padding-right: 2rem;
+      }
+    }
+  }
+  .button {
+    &.primary {
+      background-color: var(--co);
+      color: var(--cw);
+    }
+    &.secondary {
+      background-color: var(--cw);
+      color: var(--ct);
+    }
+    &.thirty {
+      border: 1px solid var(--cw);
+      color: var(--cw);
+    }
+    &.fourth {
+      transition: 0.3s !important;
+      &:hover {
+        border-color: rgba(254, 254, 254, 0.32) !important;
+      }
+    }
+    &.fifth {
+      border: 1px solid var(--co);
+      color: var(--co);
+    }
+    &.sixth {
+      transition: 0.3s !important;
+      &:hover {
+        color: var(--co) !important;
       }
     }
   }

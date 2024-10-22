@@ -269,6 +269,8 @@ body:not(.overHideMob).red {
         position: relative;
         overflow: hidden;
         background-color: transparent !important;
+        border: 1px solid var(--cw);
+        color: var(--cw) !important;
         span {
             position: relative;
             z-index: 2;
@@ -311,6 +313,15 @@ body:not(.overHideMob).red {
             }
             &::after {
                 animation: bgAn2 0.45s forwards linear;
+            }
+        }
+    }
+    .header__lang {
+        a {
+            transition: .3s;
+            &:hover {
+                color: var(--co);
+                border-color: var(--cgl);
             }
         }
     }
