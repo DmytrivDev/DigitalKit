@@ -19,6 +19,10 @@
             border-bottom: 1px solid var(--cgd);
         }
 
+        .ac-trigger {
+            transition: 0s !important;
+        }
+
         &.is-active {
             background-color: var(--co) !important;
             color: var(--cw) !important;
@@ -82,8 +86,8 @@
     .section__accordeon {
         .accordeon__list {
             position: relative;
-            top: 5rem;
-            transition: .8s;
+            top: 15vh;
+            transition: .6s;
             .ac-trigger {
                 transition: .8s;
                 height: 8.25rem;

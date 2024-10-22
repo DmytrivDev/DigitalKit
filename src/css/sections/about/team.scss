@@ -38,6 +38,17 @@
     }
 }
 
+@media screen and (min-width: 961px) {
+    .section__team {
+        .button {
+            transition: .3s;
+            &:hover {
+                border-color: rgba(25, 25, 25, 0.32) !important;
+            }
+        }
+    }
+}
+
 @media screen and (max-width: 960px) {
     .team__carousell {
         padding-right: 1.5rem;
@@ -60,8 +71,10 @@
         margin-right: 0;
     }
     .team__info {
+        padding-left: 0;
+        padding-right: 0;
         p {
-            font-weight: 600;
+            font-weight: 400;
         }
     }
 }

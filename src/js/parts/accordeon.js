@@ -32,8 +32,8 @@ export const galCar = () => {
 function checkAccordeonVisibility() {
   const rect = accordeonCont.getBoundingClientRect();
   const windowHeight = window.innerHeight;
-
-  if (rect.top < windowHeight - windowHeight / 4) {
+  const accH = document.querySelector('.accordeonStart .is-active').offsetHeight + windowHeight * .15;
+  if (rect.top < windowHeight - accH) {
     accordeonCont.classList.add('done'); // Додаємо клас якщо елемент видно
   } else {
     accordeonCont.classList.remove('done'); // Прибираємо клас якщо елемент виходить з екрану
