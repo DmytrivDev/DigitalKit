@@ -216,6 +216,18 @@
         border-top: 1px solid var(--cgd);
         width: 100%;
     }
+    .allcases__list {
+        .allcases__item {
+            display: block !important;
+            position: static !important;
+            padding-top: 0 !important;
+            border-bottom: 1px solid var(--cgl) !important;
+            .allcases__link  {
+                flex-direction: row;
+                box-shadow: none !important;
+            }
+        }
+    }
     .ourservices__line {
         display: none;
     }

@@ -76,6 +76,24 @@
         .ac-text {
             padding: 0 !important;
             padding-bottom: 2.5rem !important;
+
+            p {
+                color: var(--ct);
+            }
+
+            ul {
+                li {
+                    font-weight: var(--cg) !important;
+                    font-size: 0.875rem;
+                    margin-left: 0.875rem;
+                    font-weight: 300 !important;
+
+                    &::before {
+                        width: 0.429em;
+                        height: 0.429em;
+                    }
+                }
+            };
         }
     }
 }
@@ -159,9 +177,12 @@
             }
             ul,
             ol {
-                margin-left: 1.1em;
+                margin-left: 0.1rem;
                 font-size: 0.875rem;
                 line-height: 1.25rem;
+                li {
+                    margin-bottom: 0.5rem;
+                }
             }
         }
     }

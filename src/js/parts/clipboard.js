@@ -9,8 +9,7 @@ copyBtns?.forEach(btn => {
       const contactBox = btn.closest('.contact__cont');
 
       if (link) {
-        const linkText = link.textContent.trim();
-        const clipboardText = link.dataset.clipboard;
+        const linkText = link.querySelector('span:first-child').textContent.trim();
 
         navigator.clipboard
           .writeText(linkText)
@@ -25,13 +24,9 @@ copyBtns?.forEach(btn => {
               clearTimeout(contactBox.timer);
             }
 
-            link.textContent = clipboardText;
-
             contactBox.timer = setTimeout(() => {
               contactBox.classList.remove('isCopy');
               contactBox.timer = null;
-
-              link.textContent = linkText;
             }, 1000);
           })
           .catch(err => {

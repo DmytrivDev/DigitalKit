@@ -1,6 +1,15 @@
 .footer {
     background-color: var(--ct);
-    overflow: hidden;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -2px;
+        height: 3px;
+        background-color: var(--ct);
+      }
 }
 
 .footer__top {

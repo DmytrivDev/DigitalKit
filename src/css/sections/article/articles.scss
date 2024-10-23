@@ -38,6 +38,9 @@
     font-size: 0.875rem;
     font-weight: 600;
     line-height: 1.71;
+    * {
+      font-weight: 500 !important;
+    }
   }
   &__direction {
     display: block;

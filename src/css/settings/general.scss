@@ -1,3 +1,7 @@
+html {
+  position: relative;
+}
+
 body {
   font-size: 16px;
   line-height: 1.5;
@@ -5,7 +9,7 @@ body {
   color: var(--ct);
   font-family: var(--ff);
   transition: 0.1s background-color;
-
+  
   &.red {
     background-color: var(--co);
 
@@ -544,8 +548,10 @@ h3 {
       }
     }
     &.fifth {
-      border: 1px solid var(--co);
-      color: var(--co);
+      transition: 0.3s !important;
+      &:hover {
+        border-color: rgba(255, 89, 65, 0.32);
+      }
     }
     &.sixth {
       transition: 0.3s !important;
@@ -638,7 +644,7 @@ h3 {
 
   .embedContent {
     font-size: 0.875em;
-    line-height: 1.25em;
+    line-height: 1.429em;
 
     & > * {
       margin-top: 1em;

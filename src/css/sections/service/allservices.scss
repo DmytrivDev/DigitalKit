@@ -44,6 +44,7 @@
     border-radius: 1rem;
     background-color: var(--cw);
     position: relative;
+    overflow: hidden;
 }
 
 .allservices__carousell {
@@ -236,6 +237,7 @@
     .allservices__right {
         width: 23rem;
         border-radius: 0.75rem;
+        overflow: visible;
     }
     .allservices__textlist {
         & > li {
