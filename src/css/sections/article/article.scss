@@ -80,7 +80,7 @@
       font-weight: 600;
       line-height: 1.71;
     }
-    ul {
+    ul, .addtoany_list {
       flex-shrink: 0;
       display: flex;
       align-items: center;
@@ -88,14 +88,15 @@
     }
     a,
     button {
-      display: flex;
+      display: flex !important;
+      padding: 0 !important;
       justify-content: center;
       align-items: center;
       width: 3rem;
       height: 3rem;
       border-radius: 50%;
       overflow: hidden;
-      border: 0.0625rem solid var(--ct);
+      border: 0.0625rem solid var(--ct) !important;
       background-color: var(--cw2);
     }
     img {
@@ -217,7 +218,7 @@
       padding-bottom: 8rem;
       &.sticky {
         transform: rotate(90deg);
-        ul {
+        ul, .addtoany_list {
           animation: stickyAnim .4s forwards;
           a, button {
             transform: rotate(-90deg);
@@ -307,7 +308,7 @@
       &.soc-mob {
         display: flex;
       }
-      ul {
+      ul, .addtoany_list {
         gap: 0.75rem;
       }
     }

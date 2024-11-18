@@ -84,7 +84,8 @@ document.addEventListener('DOMContentLoaded', function () {
       const currentPage = parseInt(inner.getAttribute('data-current'));
       if (
         !e.target.classList.contains('disabled') &&
-        !pagination.classList.contains('running') && !pagination.classList.contains('stopAnim')
+        !pagination.classList.contains('running') &&
+        !pagination.classList.contains('stopAnim')
       ) {
         setCurrentPage(currentPage - 1);
       }
@@ -95,7 +96,8 @@ document.addEventListener('DOMContentLoaded', function () {
       const currentPage = parseInt(inner.getAttribute('data-current'));
       if (
         !e.target.classList.contains('disabled') &&
-        !pagination.classList.contains('running') && !pagination.classList.contains('stopAnim')
+        !pagination.classList.contains('running') &&
+        !pagination.classList.contains('stopAnim')
       ) {
         setCurrentPage(currentPage + 1);
       }
@@ -162,6 +164,8 @@ document.addEventListener('DOMContentLoaded', function () {
             const isEmpty = item.classList.contains('empty');
             pagination.classList.add('stopAnim');
 
+            console.log(indexCheck, item, index);
+
             if (!isEmpty || mustEmpty) {
               item.classList.add('filtered');
               item.classList.add('splide__slide');
@@ -171,6 +175,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
             if (isEmpty && indexCheck === 0) {
               mustEmpty = false;
+            }
+
+            if (isEmpty && indexCheck === 1) {
+              mustEmpty = false;
+              item.classList.remove('filtered');
             }
 
             if (isEmpty) {

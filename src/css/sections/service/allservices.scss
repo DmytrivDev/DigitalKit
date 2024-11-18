@@ -137,7 +137,7 @@
             z-index: 0;
         }
 
-        &#allservicesimg_2 {
+        &.stat {
             span::after {
                 width: 0.43181rem;
                 height: 4.78669rem;
@@ -150,7 +150,7 @@
             }
         }
 
-        &#allservicesimg_3 {
+        &.squere {
             span::after {
                 width: 1.328rem;
                 height: 1.328rem;
@@ -169,14 +169,14 @@
         &.showed {
             opacity: 1;
 
-            &#allservicesimg_2 {
+            &.stat {
                 span::after {
                     top: 50%;
                     left: 50%;
                 }
             }
 
-            &#allservicesimg_3 {
+            &.squere {
                 span::after {
                     transform: translate(0, 0);
                 }
@@ -256,7 +256,7 @@
     .allservices__icons {
         li {
             height: 7rem;
-            &#allservicesimg_2 {
+            &.stat {
                 span::after {
                     width: 0.314rem;
                     height: 3.48119rem;
@@ -264,7 +264,7 @@
                     left: calc(50% - 0.5rem);
                 }
             }
-            &#allservicesimg_3 {
+            &.squere {
                 span::after {
                     width: 0.965rem;
                     height: 0.92538rem;

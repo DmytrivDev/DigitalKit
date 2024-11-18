@@ -6,8 +6,10 @@ const letters = title?.textContent.split('');
 let spans = [];
 
 if (section) {
-  title.innerHTML = letters.map(letter => `<span>${letter}</span>`).join(''); // Обгортаємо кожну букву в <span>
-  spans = document.querySelectorAll('.services__title span');
+  if(title) {
+    title.innerHTML = letters.map(letter => `<span>${letter}</span>`).join(''); // Обгортаємо кожну букву в <span>
+    spans = document.querySelectorAll('.services__title span');
+  }
 
   caseChecker();
   window.addEventListener('scroll', caseChecker);
@@ -24,10 +26,8 @@ function caseChecker() {
   );
   const progressParc = progress * 100;
 
-  console.log(progress)
-
   // Кількість букв для замальовування
-  const lettersToPaint = Math.floor(progress * spans.length);
+  const lettersToPaint = spans ? Math.floor(progress * spans.length) : 0;
 
   if (progressParc >= 80) {
     list.classList.add('doneStart');
@@ -43,7 +43,7 @@ function caseChecker() {
   });
 
   // Замальовуємо відповідну кількість букв
-  spans.forEach((span, index) => {
+  spans?.forEach((span, index) => {
     if (index >= lettersToPaint) {
       span.style.color = '#CDCDCD'; // Замальовуємо в чорний
     } else {
